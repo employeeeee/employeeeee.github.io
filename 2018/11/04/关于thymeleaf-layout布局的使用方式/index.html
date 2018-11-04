@@ -117,7 +117,7 @@
 <meta property="og:description" content="最近在做项目时候用到了 layout布局的方式,相对方便了很多,记录一下.这个layout的效果是可以把网页的相同部分提取出来,只需要更改核心不一样的地方就可以了.也就是更改后边我们会提到的content部分. 首先建立相同部分的html,这里我命名为layout.html,放在了`templates/layout’文件夹下,这个路径以后是会用到的,以下是我的layout的代码,比较粗糙.但是应该">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/10758270-337810fe3378cb6d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-11-04T04:20:43.013Z">
+<meta property="og:updated_time" content="2018-11-04T04:58:53.591Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于thymeleaf+layout布局的使用方式">
 <meta name="twitter:description" content="最近在做项目时候用到了 layout布局的方式,相对方便了很多,记录一下.这个layout的效果是可以把网页的相同部分提取出来,只需要更改核心不一样的地方就可以了.也就是更改后边我们会提到的content部分. 首先建立相同部分的html,这里我命名为layout.html,放在了`templates/layout’文件夹下,这个路径以后是会用到的,以下是我的layout的代码,比较粗糙.但是应该">
@@ -287,11 +287,40 @@
 
       
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
     </ul>
   
 
   
 
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
   
 </nav>
 
@@ -375,7 +404,7 @@
                 
               
 
-              <time title="创建时间：2018-11-04 10:11:48 / 修改时间：12:20:43" itemprop="dateCreated datePublished" datetime="2018-11-04T10:11:48+08:00">2018-11-04</time>
+              <time title="创建时间：2018-11-04 10:11:48 / 修改时间：12:58:53" itemprop="dateCreated datePublished" datetime="2018-11-04T10:11:48+08:00">2018-11-04</time>
             
 
             
@@ -385,6 +414,24 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/ssm项目相关/" itemprop="url" rel="index"><span itemprop="name">ssm项目相关</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -421,6 +468,7 @@
 <li>xmlns:layout=”<a href="http://www.w3.org/1999/xhtml&quot;" target="_blank" rel="noopener">http://www.w3.org/1999/xhtml&quot;</a> 引入 thymeleaf</li>
 <li><div layout:fragment="content"></div>  你要将不同内容放置的位置</li>
 </ul>
+<a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot; xmlns:th=&quot;http://www.thymeleaf.org&quot; xmlns:layout=&quot;http://www.w3.org/1999/xhtml&quot;&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;欢迎登录&lt;/title&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;style&gt;</span><br><span class="line"></span><br><span class="line">            h1 &#123;</span><br><span class="line">                color: yellowgreen;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            table, th, td &#123;</span><br><span class="line">                border: 1px solid sandybrown;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            th &#123;</span><br><span class="line">                background: sandybrown;</span><br><span class="line">                color: cornsilk;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .row:after &#123;</span><br><span class="line">                content: &quot;&quot;;</span><br><span class="line">                clear: both;</span><br><span class="line">                display: block;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            [class*=&quot;col-&quot;] &#123;</span><br><span class="line">                float: left;</span><br><span class="line">                padding: 15px;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            html &#123;</span><br><span class="line"></span><br><span class="line">                font-family: &quot;Lucida Sans&quot;, sans-serif;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .header &#123;</span><br><span class="line">                background-color: #9933cc;</span><br><span class="line">                color: #ffffff;</span><br><span class="line">                padding: 15px;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .menu ul &#123;</span><br><span class="line">                list-style-type: none;</span><br><span class="line">                margin: 0;</span><br><span class="line">                padding: 0;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .menu li &#123;</span><br><span class="line">                padding: 8px;</span><br><span class="line">                margin-bottom: 7px;</span><br><span class="line">                background-color: #33b5e5;</span><br><span class="line">                color: #ffffff;</span><br><span class="line">                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .menu li:hover &#123;</span><br><span class="line">                background-color: #0099cc;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .aside &#123;</span><br><span class="line">                background-color: #33b5e5;</span><br><span class="line">                padding: 15px;</span><br><span class="line">                color: #ffffff;</span><br><span class="line">                text-align: center;</span><br><span class="line">                font-size: 14px;</span><br><span class="line">                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .footer &#123;</span><br><span class="line">                background-color: #0099cc;</span><br><span class="line">                color: #ffffff;</span><br><span class="line">                text-align: center;</span><br><span class="line">                font-size: 12px;</span><br><span class="line">                padding: 15px;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .right &#123;</span><br><span class="line">                float: right;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .col-1 &#123;</span><br><span class="line">                width: 8.33%;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .col-2 &#123;</span><br><span class="line">                width: 16.66%;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .col-3 &#123;</span><br><span class="line">                width: 25%;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .col-4 &#123;</span><br><span class="line">                width: 33.33%;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .col-5 &#123;</span><br><span class="line">                width: 41.66%;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .col-6 &#123;</span><br><span class="line">                width: 50%;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .col-7 &#123;</span><br><span class="line">                width: 58.33%;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .col-8 &#123;</span><br><span class="line">                width: 66.66%;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .col-9 &#123;</span><br><span class="line">                width: 75%;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .col-10 &#123;</span><br><span class="line">                width: 83.33%;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .col-11 &#123;</span><br><span class="line">                width: 91.66%;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            .col-12 &#123;</span><br><span class="line">                width: 100%;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            @media only screen and (max-width: 768px) &#123;</span><br><span class="line">                /* For mobile phones: */</span><br><span class="line">                [class*=&quot;col-&quot;] &#123;</span><br><span class="line">                    width: 100%;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &lt;/style&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/head&gt;</span><br><span class="line"></span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;center&gt;</span><br><span class="line">            &lt;div class=&quot;header&quot;&gt;</span><br><span class="line">                &lt;h2&gt;User Information table&lt;/h2&gt;</span><br><span class="line">                &lt;span th:text=&quot;$&#123;&apos;Hi &apos;+session.loginUser.username&#125;&quot;&gt;Hi, Admin&lt;/span&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">            &lt;a th:href=&quot;@&#123;/user/index&#125;&quot;&gt;&lt;/a&gt;</span><br><span class="line">            &lt;div class=&quot;row&quot;&gt;</span><br><span class="line">                &lt;div class=&quot;col-3 menu&quot;&gt;</span><br><span class="line">                    &lt;ul&gt;</span><br><span class="line">                        &lt;li&gt;用户信息管理&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;学生信息管理&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;教师信息管理&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;课程信息管理&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;周边商品管理&lt;/li&gt;</span><br><span class="line">                    &lt;/ul&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                &lt;div class=&quot;col-5&quot;&gt;</span><br><span class="line">                //重点部分</span><br><span class="line">                    &lt;div layout:fragment=&quot;content&quot;&gt;&lt;/div&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                &lt;div class=&quot;col-3 right&quot;&gt;</span><br><span class="line">                    &lt;div class=&quot;aside&quot;&gt;</span><br><span class="line">                        &lt;h2&gt;What?&lt;/h2&gt;</span><br><span class="line">                        &lt;p&gt;Chania is a city on the island of Crete.&lt;/p&gt;</span><br><span class="line">                        &lt;h2&gt;Where?&lt;/h2&gt;</span><br><span class="line">                        &lt;p&gt;Crete is a Greek island in the Mediterranean Sea.&lt;/p&gt;</span><br><span class="line">                        &lt;h2&gt;How?&lt;/h2&gt;</span><br><span class="line">                        &lt;p&gt;You can reach Chania airport from all over Europe.&lt;/p&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">                &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">            &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        &lt;/center&gt;</span><br><span class="line"></span><br><span class="line">        &lt;div class=&quot;footer&quot;&gt;</span><br><span class="line">            &lt;p&gt;Resize the browser window to see how the content respond to the resizing.@Design by</span><br><span class="line">                &lt;a href=&quot;www.baidu.com&quot;&gt;empoloyeeeeee&lt;/a&gt;</span><br><span class="line">            &lt;/p&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li>然后建立新的html,这里我建立的是一个简单的添加用户的界面add.html,代码如下<br>要提到的几个重要的部分</li>
@@ -572,7 +620,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">1</span>
+                      
+                    
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">分类</span>
                   
                 </div>
@@ -591,7 +641,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">标签</span>
                   
                 </div>
@@ -822,6 +874,326 @@
 
 
   
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
 
 
 

@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[idea打开项目没有文件夹]]></title>
+    <url>%2F2018%2F11%2F05%2Fidea%E6%89%93%E5%BC%80%E9%A1%B9%E7%9B%AE%E6%B2%A1%E6%9C%89%E6%96%87%E4%BB%B6%E5%A4%B9%2F</url>
+    <content type="text"><![CDATA[使用idea打开eclipse项目 会出现没有目录的情况解决办法: 关闭idea 找到项目文件下的.idea文件夹将.idea文件夹删除再重新打开项目即可.]]></content>
+      <categories>
+        <category>idea使用</category>
+      </categories>
+      <tags>
+        <tag>idea</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hive相关]]></title>
     <url>%2F2018%2F11%2F04%2FHive%E7%9B%B8%E5%85%B3%2F</url>
     <content type="text"><![CDATA[Hive 的简介Hive 蜂巢 是一种数据仓库工具 要明确的是Hive知识一种工具 可以用Hive将结构化的数据文件映射为一张数据库表 并提供完整的SQL 查询功能 可以将Sql 语句 转换为MapReduce任务运行所以Hive 本身是不具备存储功能的 要将它和数据库区分开 Hive的来源Hive是Facebook 开发的构建于Hadoop集群之上的数据仓库应用 它提供了 类似于SQL语法的HQL语句作为数据访问接口.这使普通分析人员在应用HADOOP的过程中更加容易学习.至于Facebook为什么使用hadoop和Hive组建数据仓库 大致原因如下: Facebook的数据仓库开始是构建于MySQL之上的,但是随着数据量的增加 查询需要的时间太久了 当数据量达到1TB 时 MySQL后台进程就崩溃了,所以Facebook决定把数据仓库转移到Oracle.这次转移也付出了很多的代价 Oracle虽然可以应对几TB的数据 但是在手机用户点击流数据(每天大约400gb)后 Oracle 也支持永恒不住了 由此要考虑新的数据仓库方案 4.内部人员简历一个并行日志处理系统Cheetah 勉强可以在24小时内处理一天的点击流数据 但是依旧有很多缺点 后来开发人员尝试将日志数据同事载入Cheetah和Hadoop中对比 发现Hadoop在处理大规模数据更有优势,后来就把工作流都转移到了Hadoop上 并基于Hadoop做了很多有价值的分析 为了使大多数人使用Hadoop 开发了Hive Hive 提供了类似于SQL的查询接口 集群存储2.5PB的数据 并且以每天15TB的数据增长 每天提交3000以上的数据 大约处理 55TB的数据]]></content>

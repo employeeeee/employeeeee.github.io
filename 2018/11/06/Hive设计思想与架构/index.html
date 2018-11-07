@@ -108,25 +108,25 @@
 
 
 
-  <meta name="description" content="使用idea打开eclipse项目 会出现没有目录的情况解决办法: 关闭idea 找到项目文件下的.idea文件夹将.idea文件夹删除再重新打开项目即可.">
-<meta name="keywords" content="idea">
+  <meta name="description" content="Hive是建立在Hadoop上的 是针对MapReduce开发的技术 Hive的组件主要分为两类: 客户端组件和服务端组件. 下面我们对这些组件进行逐一说明.1) 客户端组件CLI: Command Line Interface,命令行接口 最常用的客户端组件就是CLI CLI启动的时候 会同时启动一个Hive副本Client: Client是Hive的客户端 用于连接Hive Server 在启">
+<meta name="keywords" content="大数据 Hive">
 <meta property="og:type" content="article">
-<meta property="og:title" content="idea打开项目没有文件夹">
-<meta property="og:url" content="http://yoursite.com/2018/11/05/idea打开项目没有文件夹/index.html">
+<meta property="og:title" content="Hive设计思想与架构">
+<meta property="og:url" content="http://yoursite.com/2018/11/06/Hive设计思想与架构/index.html">
 <meta property="og:site_name" content="I got the most Time in the world">
-<meta property="og:description" content="使用idea打开eclipse项目 会出现没有目录的情况解决办法: 关闭idea 找到项目文件下的.idea文件夹将.idea文件夹删除再重新打开项目即可.">
+<meta property="og:description" content="Hive是建立在Hadoop上的 是针对MapReduce开发的技术 Hive的组件主要分为两类: 客户端组件和服务端组件. 下面我们对这些组件进行逐一说明.1) 客户端组件CLI: Command Line Interface,命令行接口 最常用的客户端组件就是CLI CLI启动的时候 会同时启动一个Hive副本Client: Client是Hive的客户端 用于连接Hive Server 在启">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-05T01:09:50.267Z">
+<meta property="og:updated_time" content="2018-11-07T13:49:02.722Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="idea打开项目没有文件夹">
-<meta name="twitter:description" content="使用idea打开eclipse项目 会出现没有目录的情况解决办法: 关闭idea 找到项目文件下的.idea文件夹将.idea文件夹删除再重新打开项目即可.">
+<meta name="twitter:title" content="Hive设计思想与架构">
+<meta name="twitter:description" content="Hive是建立在Hadoop上的 是针对MapReduce开发的技术 Hive的组件主要分为两类: 客户端组件和服务端组件. 下面我们对这些组件进行逐一说明.1) 客户端组件CLI: Command Line Interface,命令行接口 最常用的客户端组件就是CLI CLI启动的时候 会同时启动一个Hive副本Client: Client是Hive的客户端 用于连接Hive Server 在启">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/05/idea打开项目没有文件夹/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/06/Hive设计思想与架构/">
 
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>idea打开项目没有文件夹 | I got the most Time in the world</title>
+  <title>Hive设计思想与架构 | I got the most Time in the world</title>
   
 
 
@@ -336,7 +336,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/05/idea打开项目没有文件夹/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/06/Hive设计思想与架构/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="employeeeee/zhou">
@@ -353,7 +353,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">idea打开项目没有文件夹
+          <h1 class="post-title" itemprop="name headline">Hive设计思想与架构
               
             
           </h1>
@@ -378,12 +378,24 @@
                 
               
 
-              <time title="创建时间：2018-11-05 09:08:07 / 修改时间：09:09:50" itemprop="dateCreated datePublished" datetime="2018-11-05T09:08:07+08:00">2018-11-05</time>
+              <time title="创建时间：2018-11-06 20:09:00" itemprop="dateCreated datePublished" datetime="2018-11-06T20:09:00+08:00">2018-11-06</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-11-07 21:49:02" itemprop="dateModified" datetime="2018-11-07T21:49:02+08:00">2018-11-07</time>
               
             
           </span>
@@ -400,7 +412,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/idea使用/" itemprop="url" rel="index"><span itemprop="name">idea使用</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/大数据/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a></span>
 
                 
                 
@@ -434,7 +446,10 @@
       
 
       
-        <h4 id="使用idea打开eclipse项目-会出现没有目录的情况"><a href="#使用idea打开eclipse项目-会出现没有目录的情况" class="headerlink" title="使用idea打开eclipse项目 会出现没有目录的情况"></a>使用idea打开eclipse项目 会出现没有目录的情况</h4><p>解决办法: 关闭idea 找到项目文件下的<code>.idea</code>文件夹<br>将<code>.idea</code>文件夹删除<br>再重新打开项目即可.</p>
+        <p>Hive是建立在Hadoop上的 是针对MapReduce开发的技术 Hive的组件主要分为两类: 客户端组件和服务端组件. 下面我们对这些组件进行逐一说明.<br>1) 客户端组件<br>CLI: Command Line Interface,命令行接口 最常用的客户端组件就是CLI CLI启动的时候 会同时启动一个Hive副本<br>Client: Client是Hive的客户端 用于连接Hive Server 在启动Client模式的时候 需要指出Hive Server 所在的节点 , 并且在该节点启动Hive Server<br>图4-2 所示的结构图没有写上 Thrift客户端 但是Hive架构的许多客户端接口 都是建立在Thrift客户端上的 包括JDBC 和 ODBC接口<br>Web GUI : Hive 客户端 提供 了一种通过网页访问Hive 所提供的服务的方式 这个接口duiying`Hive的HWI(Hive Web Interface) 组件 使用前要启动HWI服务</p>
+<p>2) 服务器端组件<br>Driver 组件: 该组件包括Compiler Optimizer 和 Executor 其作用是完成HiiveQL(类SQL)查询语句的词法分析 语法分析 编译 优化及查询计划的生成.生成的查询计划<br>存储在HDFS中 并在随后又MapReduce调用执行.<br>MetaStore组件: 元数据服务组件 这个组件存储Hive的元数据.Hive的元数据存储在关系数据库里 Hive支持的关系数据库有Derby Mysql.Hive中的元数据包括表的名字 表的列和分区及其属性. 表的属性(是否为外部表等) 表数据所在目录 元数据对于Hive十分重要 所以Hive支持吧MEtaStore服务独立出来 安装到远程的服务器集群里<br>从而解耦Hive服务 和 MetaStore服务 保证Hive运行的健壮性.<br>Hive的MetaStore组件是Hive元数据的集中存放地</p>
+<p>MetaStore 组件包括两个部分: MetaStore 服务和 后台数据的存储. 后台数据存储的介质就是关系数据库<br>例如Hive 默认的嵌入式磁盘数据库Derby 还有MYsql 数据库 MetaStore服务是建立在后台数据存储介质之上 并且可以和Hive服务进行交互的服务组件<br>默认情况下 MetaStore服务和Hive服务是安装在一起的 运行在同一个进程当中 也可以把MetaStore服务从Hive服务中剥离出来<br>独立安装在一个集群里 Hive远程调用MetaStore服务 我们可以把元数据这一层放到防火墙之后 当客户端访问Hive服务时 就可以连接到元数据这一层 从而提供更好的管理性能和安全保障.</p>
+<p>使用远程的MetaStore服务 可以让MetaStore服务和Hive服务运行在不同的进程里 这样既保证了Hive的稳定 有提升了Hive服务的效率<br>Thrift服务 :Thtift是FaceBook开发的一个软件框架 它用来进行可扩展且跨语言服务的开发 Hive继承了该服务 可以让不同的编程语言调用Hive的接口.</p>
 
       
     </div>
@@ -454,12 +469,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2018/11/05/idea打开项目没有文件夹/">idea打开项目没有文件夹</a></p>
+  <p><span>本文标题:</span><a href="/2018/11/06/Hive设计思想与架构/">Hive设计思想与架构</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 employeeeee/zhou 的个人博客">employeeeee/zhou</a></p>
-  <p><span>发布时间:</span>2018年11月05日 - 09:11</p>
-  <p><span>最后更新:</span>2018年11月05日 - 09:11</p>
-  <p><span>原始链接:</span><a href="/2018/11/05/idea打开项目没有文件夹/" title="idea打开项目没有文件夹">http://yoursite.com/2018/11/05/idea打开项目没有文件夹/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/11/05/idea打开项目没有文件夹/" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2018年11月06日 - 20:11</p>
+  <p><span>最后更新:</span>2018年11月07日 - 21:11</p>
+  <p><span>原始链接:</span><a href="/2018/11/06/Hive设计思想与架构/" title="Hive设计思想与架构">http://yoursite.com/2018/11/06/Hive设计思想与架构/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/11/06/Hive设计思想与架构/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -491,7 +506,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/idea/" rel="tag"><i class="fa fa-tag"></i> idea</a>
+            <a href="/tags/大数据-Hive/" rel="tag"><i class="fa fa-tag"></i> 大数据 Hive</a>
           
         </div>
       
@@ -504,8 +519,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/04/Hive相关/" rel="next" title="Hive相关">
-                <i class="fa fa-chevron-left"></i> Hive相关
+              <a href="/2018/11/05/Hive和数据库的区别/" rel="next" title="Hive和数据库的区别">
+                <i class="fa fa-chevron-left"></i> Hive和数据库的区别
               </a>
             
           </div>
@@ -513,10 +528,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/05/Hive和数据库的区别/" rel="prev" title="Hive和数据库的区别">
-                Hive和数据库的区别 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -562,17 +573,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -685,22 +687,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用idea打开eclipse项目-会出现没有目录的情况"><span class="nav-number">1.</span> <span class="nav-text">使用idea打开eclipse项目 会出现没有目录的情况</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

@@ -108,24 +108,25 @@
 
 
 
-  <meta name="description" content="关于我自己一个在北漂的IT入门小白,在北京五环外六环内漂泊.啊~啊~ 五环 你比四环多一环的五环做一个自己的blog 记录一些生活 记录一些技术毕竟用自己的还是比用别人的要很多啊哈哈哈哈大概是这样 会定期记录一些技术文档会记录一些吃喝玩乐的感悟也希望会有越来越多的朋友我叫employeeeeeemployeeeee的employeeeee NOWI have the most time in th">
-<meta property="og:type" content="website">
-<meta property="og:title" content="HEY  你好呀 欢迎来到我的博客">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+  <meta name="description" content="公司最近写的项目需要联动 然后要用到ajax的技术,虽然以前在项目中用到过ajax 但是没有很好地理解晚上的时候 仔细的想了一想 ajax的用法 在这里记录一下 因为之前写过echarts 后台传值的时候是通过ajax传的,个人觉得后台传值还是比较简单的.理论上来说,就是通过sql语句在数据库中进行取值后 将取到的值放在list在controller 把 list放到model中 然后通过遍历 取">
+<meta name="keywords" content="ajax ssm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ajax与ssm前后台传值">
+<meta property="og:url" content="http://yoursite.com/2018/11/07/ajax与ssm前后台传值/index.html">
 <meta property="og:site_name" content="I got the most Time in the world">
-<meta property="og:description" content="关于我自己一个在北漂的IT入门小白,在北京五环外六环内漂泊.啊~啊~ 五环 你比四环多一环的五环做一个自己的blog 记录一些生活 记录一些技术毕竟用自己的还是比用别人的要很多啊哈哈哈哈大概是这样 会定期记录一些技术文档会记录一些吃喝玩乐的感悟也希望会有越来越多的朋友我叫employeeeeeemployeeeee的employeeeee NOWI have the most time in th">
+<meta property="og:description" content="公司最近写的项目需要联动 然后要用到ajax的技术,虽然以前在项目中用到过ajax 但是没有很好地理解晚上的时候 仔细的想了一想 ajax的用法 在这里记录一下 因为之前写过echarts 后台传值的时候是通过ajax传的,个人觉得后台传值还是比较简单的.理论上来说,就是通过sql语句在数据库中进行取值后 将取到的值放在list在controller 把 list放到model中 然后通过遍历 取">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-04T11:43:46.931Z">
+<meta property="og:updated_time" content="2018-11-07T15:06:36.721Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HEY  你好呀 欢迎来到我的博客">
-<meta name="twitter:description" content="关于我自己一个在北漂的IT入门小白,在北京五环外六环内漂泊.啊~啊~ 五环 你比四环多一环的五环做一个自己的blog 记录一些生活 记录一些技术毕竟用自己的还是比用别人的要很多啊哈哈哈哈大概是这样 会定期记录一些技术文档会记录一些吃喝玩乐的感悟也希望会有越来越多的朋友我叫employeeeeeemployeeeee的employeeeee NOWI have the most time in th">
+<meta name="twitter:title" content="ajax与ssm前后台传值">
+<meta name="twitter:description" content="公司最近写的项目需要联动 然后要用到ajax的技术,虽然以前在项目中用到过ajax 但是没有很好地理解晚上的时候 仔细的想了一想 ajax的用法 在这里记录一下 因为之前写过echarts 后台传值的时候是通过ajax传的,个人觉得后台传值还是比较简单的.理论上来说,就是通过sql语句在数据库中进行取值后 将取到的值放在list在controller 把 list放到model中 然后通过遍历 取">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/about/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/07/ajax与ssm前后台传值/">
 
 
 
@@ -135,7 +136,7 @@
   };
 </script>
 
-  <title>HEY  你好呀 欢迎来到我的博客 | I got the most Time in the world</title>
+  <title>ajax与ssm前后台传值 | I got the most Time in the world</title>
   
 
 
@@ -229,7 +230,7 @@
         
         
           
-          <li class="menu-item menu-item-about menu-item-active">
+          <li class="menu-item menu-item-about">
     <a href="/about/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-user"></i> <br>who's</a>
   </li>
@@ -315,73 +316,224 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/07/ajax与ssm前后台传值/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="employeeeee/zhou">
+      <meta itemprop="description" content="Dont you want some of that">
+      <meta itemprop="image" content="/images/timg.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I got the most Time in the world">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">HEY  你好呀 欢迎来到我的博客</h1>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <h4 id="关于我自己"><a href="#关于我自己" class="headerlink" title="关于我自己"></a>关于我自己</h4><p>一个在北漂的IT入门小白,在北京五环外六环内漂泊.<br>啊~啊~ 五环 你比四环多一环的五环<br>做一个自己的blog 记录一些生活 记录一些技术<br>毕竟用自己的还是比用别人的要很多啊<br>哈哈哈哈<br>大概是这样 会定期记录一些技术文档<br>会记录一些吃喝玩乐的感悟<br>也希望会有越来越多的朋友<br>我叫<code>employeeeee</code><br>employeeeee的employeeeee</p>
-<h4 id="NOW"><a href="#NOW" class="headerlink" title="NOW"></a>NOW</h4><p>I have the most time in the world.</p>
-
+          <h1 class="post-title" itemprop="name headline">ajax与ssm前后台传值
+              
+            
+          </h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-07 22:52:13 / 修改时间：23:06:36" itemprop="dateCreated datePublished" datetime="2018-11-07T22:52:13+08:00">2018-11-07</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/ssm相关/" itemprop="url" rel="index"><span itemprop="name">ssm相关</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>公司最近写的项目需要联动 然后要用到ajax的技术,虽然以前在项目中用到过ajax 但是没有很好地理解<br>晚上的时候 仔细的想了一想 ajax的用法 在这里记录一下</p>
+<p>因为之前写过echarts 后台传值的时候是通过ajax传的,个人觉得后台传值还是比较简单的.<br>理论上来说,就是通过sql语句在数据库中进行取值后 将取到的值放在list<br>在controller 把 list放到model中 然后通过遍历 取出数值. 然后可以根据实际项目的需要<br>将不同的属性放在不同的数组中,<br>再在对应的位置将内容取出来.<br><a id="more"></a><br>因为是做java的 所以在如何前台向后台传值这里还是稍微的卡了一下.<br>我是这样做测验的<br>在前台的div里 写了一句话.通过js<br><code>var a= document.geteletmentById.InnerHtml</code>获取到了这段话的内容.<br>然后想了一下如何将这个值传到后台.<br>ajax 其中是有一个属性<code>type&#39;的
+其实就是对应的controller中的getmapping和postmapping
+我第一次写的时候就是因为在get请求中执行的ajax
+而我在后台把方法写到了postmapping中 所以没有获取到数据.
+接下来就是把我取到的值写到ajax 的 data中</code>data[“a”:a]`(测试写的比较着急 不要在意命名)<br>然后在controller中 通过httphttpServletRequest.getprameter(“a”)<br>获取到ajax传回得数值.<br>我在前台和后台分别写了alert 和 sout<br>最后是成功通过ajax 进行了 前后台的数据交互<br>当然了 通常ajax前台的数值还是在post请求中使用的比较多<br>道理还是一样的<br>在此记录一下 以便日后浏览.</p>
+
       
     </div>
+
     
+
+    
+    
+    
+
+      
+         <div>
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2018/11/07/ajax与ssm前后台传值/">ajax与ssm前后台传值</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 employeeeee/zhou 的个人博客">employeeeee/zhou</a></p>
+  <p><span>发布时间:</span>2018年11月07日 - 22:11</p>
+  <p><span>最后更新:</span>2018年11月07日 - 23:11</p>
+  <p><span>原始链接:</span><a href="/2018/11/07/ajax与ssm前后台传值/" title="ajax与ssm前后台传值">http://yoursite.com/2018/11/07/ajax与ssm前后台传值/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/11/07/ajax与ssm前后台传值/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+      $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+        });
+    });  
+</script>
+
+
+        </div>
+      
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ajax-ssm/" rel="tag"><i class="fa fa-tag"></i> ajax ssm</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/06/Hive设计思想与架构/" rel="next" title="Hive设计思想与架构">
+                <i class="fa fa-chevron-left"></i> Hive设计思想与架构
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
 
-    
-    
-    
   </div>
 
 
@@ -411,17 +563,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -538,22 +681,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#关于我自己"><span class="nav-number">1.</span> <span class="nav-text">关于我自己</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NOW"><span class="nav-number">2.</span> <span class="nav-text">NOW</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

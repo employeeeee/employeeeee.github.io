@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[ajax+springboot+thymeleaf的使用]]></title>
+    <url>%2F2018%2F11%2F08%2Fajax-springboot-thymeleaf%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[最近的一个项目中 涉及到了一个功能 是关于地图的数据联动所以就需要用ajax来异步更新数据.之前搭了一个springboot的项目.所以就用在这个项目上进行了一次尝试.记录一下整个的过程 ,希望会对刚学习ajax的同学有所帮助. 设计思路:前台的div中有一个数字 在前台获取到这个id 然后传到后台后台获取到id为这个值得对象.再将这个对象在前台展示出来. 出现的问题和解决办法.在前台的div中写了一个数字1&lt;div id=&quot;demo&quot;&gt;1&lt;/div&gt; 然后在js中通过 document.getEletmentById(&quot;demo&quot;).innerHTML;获取到了div中的值.然后在ajax的data的text标签中,然后后台通过httpServletRequest.getParameter(&quot;text&quot;)这个id,通过之前写过的跟去id获取对象的方法.来获取这个对象,放到list中,在通过遍历写出来.后台先是报了一个错误.因为通过httpServletRequest.getParameter获取到的是一个String值.但是我的id是一个int值,解决的办法是通过”integer.valueof()”将string类型转换成了integer.然后运行时报了一个”null”的错误.开始以为是空指针的错误,后来发现是因为integer.valueof的字符串是空值会报的错.因为不确定是因为转型的原因还是取值问题,所以在转型的语句上边加了一个sout的语句.做了一个输出.并且在前台取值后加了一个alert.然后取消转型 直接sout获取到的值.运行后发现前台没问题.后台输出了一个null后,输出了正常获取到的id.考虑到可能是加载的问题.把ajax写到了一个function中,然后通过按钮触发函数.运行后,发现先输出null,点击按钮输出正常id.这样就找到了问题的原因.是因为页面加载的时候直接就运行了我在controller下写的方法.突然想到,因为ajax是异步加载,那么应该通过一个链接跳转到这个网页,一个链接是用来执行ajax的.于是在controller 中新加了一个getmapping,直接跳转到当前网页,再通过按钮跳转新链接.完成ajax传值的操作.再次运行.返现没有报错,前台取值正常,后台取值正常,但是前台并没有显示出来对象.显示检查了一下each 发现没有写错.然后在后台的model代码前sout在后台通过根据id获取的对象.运行 发现后台是获取到了这个对象的 但是前台还是没有显示.在这个问题上还是纠结了一会的.然后在前台的function中传了一个参数,把参数通过consle.log输出发现了问题.输出的是一个网页.因为在控制层写的String方法,然后return的是一个html.所以就出现了错误.然后将String方法 改成 viod 返回的值改成json字符串.这里请教了一下同事.具体代码如下123456ObjectMapper objectMapper = new ObjectMapper(); String json = objectMapper.writeValueAsString(userService.getById(userid)); Writer writer = httpServletResponse.getWriter(); writer.write(json); writer.close(); 这里是直接给前台返回了一个json类型的值.然后在前台对json数据进行解析.12345var str=&quot;&quot; str+=&quot;&lt;tr&gt;&lt;td&gt;&quot;+data.userid+&quot;&lt;/td&gt;&lt;td&gt;&quot;+data.username+&quot;&lt;/td&gt;&lt;td&gt;&quot;+data.password+&quot;&lt;/td&gt;&lt;td&gt;&quot;+data.nickname+&quot;&lt;/td&gt;&lt;/tr&gt;&quot;; $(&apos;#tbody&apos;).html(str); tbody是表格的id然后执行发现好用 然后吃饭的时候突然想到.我返回的是一个html,前台没有数据是因为我的数据在返回的html中,那么我可以直接返回这个html给这个div.在div直接加载这个只有表格的网页应该也是可以的 吃完饭测试了一下,果然是可行的.这个思路是没问题的.具体的代码也比较简单.所以就不贴了.整个的思路就是这样的. perfect 也感谢我文武兄弟的帮助.]]></content>
+      <categories>
+        <category>ssm相关</category>
+      </categories>
+      <tags>
+        <tag>ajax ssm springboot</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ajax与ssm前后台传值]]></title>
     <url>%2F2018%2F11%2F07%2Fajax%E4%B8%8Essm%E5%89%8D%E5%90%8E%E5%8F%B0%E4%BC%A0%E5%80%BC%2F</url>
     <content type="text"><![CDATA[公司最近写的项目需要联动 然后要用到ajax的技术,虽然以前在项目中用到过ajax 但是没有很好地理解晚上的时候 仔细的想了一想 ajax的用法 在这里记录一下 因为之前写过echarts 后台传值的时候是通过ajax传的,个人觉得后台传值还是比较简单的.理论上来说,就是通过sql语句在数据库中进行取值后 将取到的值放在list在controller 把 list放到model中 然后通过遍历 取出数值. 然后可以根据实际项目的需要将不同的属性放在不同的数组中,再在对应的位置将内容取出来.因为是做java的 所以在如何前台向后台传值这里还是稍微的卡了一下.我是这样做测验的在前台的div里 写了一句话.通过jsvar a= document.geteletmentById.InnerHtml获取到了这段话的内容.然后想了一下如何将这个值传到后台.ajax 其中是有一个属性type&#39;的 其实就是对应的controller中的getmapping和postmapping 我第一次写的时候就是因为在get请求中执行的ajax 而我在后台把方法写到了postmapping中 所以没有获取到数据. 接下来就是把我取到的值写到ajax 的 data中data[“a”:a]`(测试写的比较着急 不要在意命名)然后在controller中 通过httphttpServletRequest.getprameter(“a”)获取到ajax传回得数值.我在前台和后台分别写了alert 和 sout最后是成功通过ajax 进行了 前后台的数据交互当然了 通常ajax前台的数值还是在post请求中使用的比较多道理还是一样的在此记录一下 以便日后浏览.]]></content>

@@ -108,25 +108,25 @@
 
 
 
-  <meta name="description" content="Hive 和 数据库的区别Hive并不是数据库,从结构上看,Hive和数据库除了有类似的查询语言,再无类似之处.数据库可以用在Online的应用中,但是Hive是为了数据仓库而设计的  数据存储位置 Hive是建立在Hadoop上的,所有Hive的数据都是存储在HDFS中的;而数据库可以将数据保存在块设备或者本地文件系统中 查询语言 由于SQL被广泛地应用在数据仓库中 一次针对Hive的特性设计了">
-<meta name="keywords" content="Hive 大数据">
+  <meta name="description" content="之前在测试了 一对一的方式后又测试了一下一对多的方式,具体的关系为.一个班级有一个老师有很多学生.在数据库中新建学生表 并存入数据.123456789101112create table orm_student(s_id int identity(14301101,1) primary key ,s_name varchar(20),class_id int) insert into orm_st">
+<meta name="keywords" content="ajax mybatis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hive和数据库的区别">
-<meta property="og:url" content="http://yoursite.com/2018/11/05/Hive和数据库的区别/index.html">
+<meta property="og:title" content="ajax和mybatis多表查询的配合使用">
+<meta property="og:url" content="http://yoursite.com/2018/11/13/ajax和mybatis多表查询的配合使用/index.html">
 <meta property="og:site_name" content="I got the most Time in the world">
-<meta property="og:description" content="Hive 和 数据库的区别Hive并不是数据库,从结构上看,Hive和数据库除了有类似的查询语言,再无类似之处.数据库可以用在Online的应用中,但是Hive是为了数据仓库而设计的  数据存储位置 Hive是建立在Hadoop上的,所有Hive的数据都是存储在HDFS中的;而数据库可以将数据保存在块设备或者本地文件系统中 查询语言 由于SQL被广泛地应用在数据仓库中 一次针对Hive的特性设计了">
+<meta property="og:description" content="之前在测试了 一对一的方式后又测试了一下一对多的方式,具体的关系为.一个班级有一个老师有很多学生.在数据库中新建学生表 并存入数据.123456789101112create table orm_student(s_id int identity(14301101,1) primary key ,s_name varchar(20),class_id int) insert into orm_st">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-05T12:25:20.748Z">
+<meta property="og:updated_time" content="2018-11-13T02:38:25.430Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hive和数据库的区别">
-<meta name="twitter:description" content="Hive 和 数据库的区别Hive并不是数据库,从结构上看,Hive和数据库除了有类似的查询语言,再无类似之处.数据库可以用在Online的应用中,但是Hive是为了数据仓库而设计的  数据存储位置 Hive是建立在Hadoop上的,所有Hive的数据都是存储在HDFS中的;而数据库可以将数据保存在块设备或者本地文件系统中 查询语言 由于SQL被广泛地应用在数据仓库中 一次针对Hive的特性设计了">
+<meta name="twitter:title" content="ajax和mybatis多表查询的配合使用">
+<meta name="twitter:description" content="之前在测试了 一对一的方式后又测试了一下一对多的方式,具体的关系为.一个班级有一个老师有很多学生.在数据库中新建学生表 并存入数据.123456789101112create table orm_student(s_id int identity(14301101,1) primary key ,s_name varchar(20),class_id int) insert into orm_st">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/05/Hive和数据库的区别/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/13/ajax和mybatis多表查询的配合使用/">
 
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>Hive和数据库的区别 | I got the most Time in the world</title>
+  <title>ajax和mybatis多表查询的配合使用 | I got the most Time in the world</title>
   
 
 
@@ -336,7 +336,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/05/Hive和数据库的区别/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/13/ajax和mybatis多表查询的配合使用/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="employeeeee/zhou">
@@ -353,7 +353,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hive和数据库的区别
+          <h1 class="post-title" itemprop="name headline">ajax和mybatis多表查询的配合使用
               
             
           </h1>
@@ -378,7 +378,7 @@
                 
               
 
-              <time title="创建时间：2018-11-05 20:08:07 / 修改时间：20:25:20" itemprop="dateCreated datePublished" datetime="2018-11-05T20:08:07+08:00">2018-11-05</time>
+              <time title="创建时间：2018-11-13 09:40:16 / 修改时间：10:38:25" itemprop="dateCreated datePublished" datetime="2018-11-13T09:40:16+08:00">2018-11-13</time>
             
 
             
@@ -400,7 +400,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/大数据/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a></span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/ssm相关/" itemprop="url" rel="index"><span itemprop="name">ssm相关</span></a></span>
 
                 
                 
@@ -434,18 +434,15 @@
       
 
       
-        <h4 id="Hive-和-数据库的区别"><a href="#Hive-和-数据库的区别" class="headerlink" title="Hive 和 数据库的区别"></a>Hive 和 数据库的区别</h4><p>Hive并不是数据库,从结构上看,Hive和数据库除了有类似的查询语言,再无类似之处.数据库可以用在Online的应用中,但是Hive是为了数据仓库而设计的</p>
-<ol>
-<li>数据存储位置 Hive是建立在Hadoop上的,所有Hive的数据都是存储在HDFS中的;而数据库可以将数据保存在块设备或者本地文件系统中</li>
-<li>查询语言 由于SQL被广泛地应用在数据仓库中 一次针对Hive的特性设计了类SQL的查询语言HQL 熟悉SQL的开发者可以很方便的使用Hive进行开发.</li>
-<li>索引 Hive在加载数据的过程中 不会对数据进行任何处理 甚至不会对数据进行扫描 因此也没有对数据中的某些Key建立索引,Hive要访问数据中满足条件的特定值时<br>需要暴力扫描整个数据 因此访问延迟高,但由于MapReduce的引入 Hive可以进行并行访问数据 因此即使没有索引 对于大数据量的访问 Hive仍然可以体现出优势</li>
-<li>数据格式 Hive中没有定义专门的数据格式 数据格式可以由用户指定 用户定义数据格式需要指定三个属性: 列分隔符 行分隔符 以及读取文件数据的方法 .在加载过程中不会对数据本省进行修改 知识复制或者移动到相应的HDFS目录中.而数据库会按照一定的组织存储 过程耗时</li>
-<li>执行 Hive查询的执行是通过 MapReduce实现 而数据库有自己的执行引擎.<a id="more"></a></li>
-<li>Hive不支持对数据的改写和添加 加载时候是确定好的</li>
-<li>延迟 MapReduce本身延迟比较高 数据规模小的时候 数据库的执行延迟较低</li>
-<li>可扩展性 由于Hive是建立在Hadoop上 因此Hive的可扩展性和Hadoop一直 而数据库的扩展性很有限</li>
-<li>数据规模 由于Hive建立在集群 可以利用MapReduce进行并行计算 因此可以支持很大规模的数据<br>10 Hive对硬件要求比较低 而关系型数据库管理系统为了提高线上处理速度 对硬件要求相对较高.</li>
-</ol>
+        <p>之前在测试了 一对一的方式后<br>又测试了一下一对多的方式,具体的关系为.一个班级有一个老师有很多学生.<br>在数据库中新建学生表 并存入数据.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> orm_student(</span><br><span class="line">s_id <span class="built_in">int</span> <span class="keyword">identity</span>(<span class="number">14301101</span>,<span class="number">1</span>) primary <span class="keyword">key</span> ,</span><br><span class="line">s_name <span class="built_in">varchar</span>(<span class="number">20</span>),</span><br><span class="line">class_id <span class="built_in">int</span></span><br><span class="line">) </span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orm_student <span class="keyword">values</span>(<span class="string">'张三'</span>,<span class="number">1401</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orm_student <span class="keyword">values</span>(<span class="string">'李四'</span>,<span class="number">1401</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orm_student <span class="keyword">values</span>(<span class="string">'赵武'</span>,<span class="number">1401</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orm_student <span class="keyword">values</span>(<span class="string">'刘能'</span>,<span class="number">1401</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orm_student <span class="keyword">values</span>(<span class="string">'王大麻'</span>,<span class="number">1401</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orm_student <span class="keyword">values</span>(<span class="string">'王心'</span>,<span class="number">1402</span>)</span><br></pre></td></tr></table></figure></p>
+<p>然后写好对应的实体类就行了,因为是查询class来搜索到所有学生的.<br>所以在测试时没有写学生相关的mapper文件等.并且要在class的实体类中,添加一条<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> List&lt;Student&gt; studentList;</span><br></pre></td></tr></table></figure></p>
+<p>用来查询学生的信息.<br><a id="more"></a><br>然后在class的mapper文件中进行配置 具体内容如下.<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">"BaseResultMap"</span> <span class="attr">type</span>=<span class="string">"com.example.memory.pc.classes.domain.Classes"</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">id</span> <span class="attr">column</span>=<span class="string">"c_id"</span> <span class="attr">property</span>=<span class="string">"cId"</span> <span class="attr">jdbcType</span>=<span class="string">"INTEGER"</span>/&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">"c_name"</span> <span class="attr">property</span>=<span class="string">"cName"</span> <span class="attr">jdbcType</span>=<span class="string">"NVARCHAR"</span>/&gt;</span></span><br><span class="line">       <span class="comment">&lt;!--    &lt;result column="t_id" property="tId" jdbcType="INTEGER" /&gt;--&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="name">association</span> <span class="attr">property</span>=<span class="string">"teacher"</span> <span class="attr">javaType</span>=<span class="string">"com.example.memory.pc.teacher.domain.Teacher"</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">id</span> <span class="attr">property</span>=<span class="string">"tId"</span> <span class="attr">column</span>=<span class="string">"t_id"</span>/&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"tName"</span> <span class="attr">column</span>=<span class="string">"t_name"</span>/&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">association</span>&gt;</span></span><br><span class="line"></span><br><span class="line">       <span class="tag">&lt;<span class="name">collection</span> <span class="attr">property</span>=<span class="string">"studentList"</span> <span class="attr">ofType</span>=<span class="string">"com.example.memory.pc.student.domain.Student"</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">id</span> <span class="attr">property</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"s_id"</span>/&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"studentName"</span> <span class="attr">column</span>=<span class="string">"s_name"</span>/&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">collection</span>&gt;</span></span><br><span class="line"></span><br><span class="line">   <span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>其实就是在resultmap中加入学生的属性.因为是list所以配置的时候标签是<collection> 然后配置一下ofType就可以了<br>    查询的sql语句如下<br>    <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">        <span class="keyword">select</span></span><br><span class="line">t2.c_name,t1.t_name,t3.s_name</span><br><span class="line"><span class="keyword">from</span> orm_teacher t1 ,orm_class t2,orm_student t3</span><br><span class="line"><span class="keyword">where</span> t1.t_id = t2.t_id <span class="keyword">and</span> t2.c_id=<span class="comment">#&#123;cId&#125;;</span></span><br></pre></td></tr></table></figure></collection></p>
+<p>在测试环境中可以查询到数据,因为查询的student是list的类型,那么我在把查询出来的整个list作为json数据传给前台的话<br>就有一个解析list中学生list的问题, 所以又测试了一下解析的办法.</p>
+<p>在controller中 将数据作为json类型传给前台.<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@GetMapping</span>(<span class="string">"all"</span>)</span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">getAll</span><span class="params">(Model model, HttpServletResponse httpServletResponse, HttpServletRequest httpServletRequest)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line"></span><br><span class="line">    String a = httpServletRequest.getParameter(<span class="string">"cid"</span>);</span><br><span class="line">    System.out.println(a);</span><br><span class="line">    Integer cId = Integer.valueOf(a);</span><br><span class="line">    <span class="comment">/*解决前台json中文乱码问题*/</span></span><br><span class="line">    httpServletResponse.setContentType(<span class="string">"text/html;charset=utf-8"</span>);</span><br><span class="line">    ObjectMapper objectMapper =<span class="keyword">new</span> ObjectMapper();</span><br><span class="line">    String json = objectMapper.writeValueAsString(classesService.getAll(cId));</span><br><span class="line">    System.out.println(json);</span><br><span class="line">    Writer writer = httpServletResponse.getWriter();</span><br><span class="line">    writer.write(json);</span><br><span class="line">    writer.close();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>前台解析json<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">        $.getJSON(<span class="string">'/classes/all'</span>,&#123;<span class="string">"cid"</span>: a&#125;,<span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> list = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line">            <span class="keyword">var</span> str=<span class="string">""</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> x=<span class="number">0</span>; x &lt; data.length;x++ ) &#123;</span><br><span class="line"></span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;data[x].studentList.length;i++)&#123;</span><br><span class="line">               <span class="built_in">console</span>.log(data[x].studentList[i].studentName);</span><br><span class="line">               <span class="built_in">console</span>.log(data[x]);</span><br><span class="line">              <span class="comment">/* var str="";*/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">               str+=<span class="string">"&lt;tr&gt;&lt;td&gt;"</span>+<span class="number">1111</span>+<span class="string">"&lt;/td&gt;&lt;td&gt;"</span>+data[x].studentList[i].studentName+<span class="string">"&lt;/td&gt;&lt;td&gt;"</span>+data[x].teacher.tName+<span class="string">"&lt;/td&gt;&lt;td&gt;"</span>+data[x].cName+<span class="string">"&lt;/td&gt;&lt;td&gt;"</span>+<span class="number">1401</span>+<span class="string">"&lt;/td&gt;&lt;/tr&gt;"</span></span><br><span class="line">               list.push(str);</span><br><span class="line"></span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            $(<span class="string">'#tbody'</span>).html(str);</span><br><span class="line"><span class="comment">/*            console.log(list);*/</span></span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"input-group"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"input-group-addon"</span>&gt;</span>@<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">class</span>=<span class="string">"form-control"</span> <span class="attr">id</span>=<span class="string">"select"</span> <span class="attr">placeholder</span>=<span class="string">"请输入你要查询的班级id"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">class</span>=<span class="string">"btn btn-default"</span>  <span class="attr">onclick</span>=<span class="string">"getAll();ajax()"</span> &gt;</span>点击查询<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-lg-4"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"col-lg-4"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">table</span> <span class="attr">class</span>=<span class="string">"table"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>学生id<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>学生姓名<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>指导教师<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>班级<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">th</span>&gt;</span>班级id<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">tbody</span> <span class="attr">id</span>=<span class="string">"tbody"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>前台的html达到效果就是 输入班级id就可以查询到所有的信息了.</p>
 
       
     </div>
@@ -465,12 +462,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2018/11/05/Hive和数据库的区别/">Hive和数据库的区别</a></p>
+  <p><span>本文标题:</span><a href="/2018/11/13/ajax和mybatis多表查询的配合使用/">ajax和mybatis多表查询的配合使用</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 employeeeee/zhou 的个人博客">employeeeee/zhou</a></p>
-  <p><span>发布时间:</span>2018年11月05日 - 20:11</p>
-  <p><span>最后更新:</span>2018年11月05日 - 20:11</p>
-  <p><span>原始链接:</span><a href="/2018/11/05/Hive和数据库的区别/" title="Hive和数据库的区别">http://yoursite.com/2018/11/05/Hive和数据库的区别/</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/11/05/Hive和数据库的区别/" aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2018年11月13日 - 09:11</p>
+  <p><span>最后更新:</span>2018年11月13日 - 10:11</p>
+  <p><span>原始链接:</span><a href="/2018/11/13/ajax和mybatis多表查询的配合使用/" title="ajax和mybatis多表查询的配合使用">http://yoursite.com/2018/11/13/ajax和mybatis多表查询的配合使用/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/11/13/ajax和mybatis多表查询的配合使用/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -502,7 +499,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hive-大数据/" rel="tag"><i class="fa fa-tag"></i> Hive 大数据</a>
+            <a href="/tags/ajax-mybatis/" rel="tag"><i class="fa fa-tag"></i> ajax mybatis</a>
           
         </div>
       
@@ -515,8 +512,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/05/idea打开项目没有文件夹/" rel="next" title="idea打开项目没有文件夹">
-                <i class="fa fa-chevron-left"></i> idea打开项目没有文件夹
+              <a href="/2018/11/11/mybatis关联查询-1对1的查询/" rel="next" title="mybatis关联查询-1对1的查询">
+                <i class="fa fa-chevron-left"></i> mybatis关联查询-1对1的查询
               </a>
             
           </div>
@@ -524,10 +521,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/06/Hive设计思想与架构/" rel="prev" title="Hive设计思想与架构">
-                Hive设计思想与架构 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -573,17 +566,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -704,22 +688,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Hive-和-数据库的区别"><span class="nav-number">1.</span> <span class="nav-text">Hive 和 数据库的区别</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

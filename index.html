@@ -335,6 +335,175 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/13/ajax和mybatis多表查询的配合使用/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="employeeeee/zhou">
+      <meta itemprop="description" content="Dont you want some of that">
+      <meta itemprop="image" content="/images/timg.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I got the most Time in the world">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/13/ajax和mybatis多表查询的配合使用/" itemprop="url">
+                  ajax和mybatis多表查询的配合使用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-13 09:40:16 / 修改时间：10:38:25" itemprop="dateCreated datePublished" datetime="2018-11-13T09:40:16+08:00">2018-11-13</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/ssm相关/" itemprop="url" rel="index"><span itemprop="name">ssm相关</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>之前在测试了 一对一的方式后<br>又测试了一下一对多的方式,具体的关系为.一个班级有一个老师有很多学生.<br>在数据库中新建学生表 并存入数据.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> orm_student(</span><br><span class="line">s_id <span class="built_in">int</span> <span class="keyword">identity</span>(<span class="number">14301101</span>,<span class="number">1</span>) primary <span class="keyword">key</span> ,</span><br><span class="line">s_name <span class="built_in">varchar</span>(<span class="number">20</span>),</span><br><span class="line">class_id <span class="built_in">int</span></span><br><span class="line">) </span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orm_student <span class="keyword">values</span>(<span class="string">'张三'</span>,<span class="number">1401</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orm_student <span class="keyword">values</span>(<span class="string">'李四'</span>,<span class="number">1401</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orm_student <span class="keyword">values</span>(<span class="string">'赵武'</span>,<span class="number">1401</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orm_student <span class="keyword">values</span>(<span class="string">'刘能'</span>,<span class="number">1401</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orm_student <span class="keyword">values</span>(<span class="string">'王大麻'</span>,<span class="number">1401</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orm_student <span class="keyword">values</span>(<span class="string">'王心'</span>,<span class="number">1402</span>)</span><br></pre></td></tr></table></figure></p>
+<p>然后写好对应的实体类就行了,因为是查询class来搜索到所有学生的.<br>所以在测试时没有写学生相关的mapper文件等.并且要在class的实体类中,添加一条<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> List&lt;Student&gt; studentList;</span><br></pre></td></tr></table></figure></p>
+<p>用来查询学生的信息.<br>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/11/13/ajax和mybatis多表查询的配合使用/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+         
+          <!--/noindex-->
+        
+      
+    </p></div>
+
+    
+
+    
+    
+    
+
+      
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/mybatis关联查询-1对1的查询/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1804,182 +1973,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/03/大数据的来源/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="employeeeee/zhou">
-      <meta itemprop="description" content="Dont you want some of that">
-      <meta itemprop="image" content="/images/timg.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I got the most Time in the world">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/03/大数据的来源/" itemprop="url">
-                  idea新建类自动生成注释
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-03 17:24:39" itemprop="dateCreated datePublished" datetime="2018-11-03T17:24:39+08:00">2018-11-03</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-11-04 20:33:53" itemprop="dateModified" datetime="2018-11-04T20:33:53+08:00">2018-11-04</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/idea的使用/" itemprop="url" rel="index"><span itemprop="name">idea的使用</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li>打开idea 使用ctrl+alt+s 打开设置。<br><img src="https://upload-images.jianshu.io/upload_images/10758270-f16f7ec231e1ddf5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>/*<em>
-</em>Created by 周子淏 on ${DATE} ${TIME}<br>*/<br>讲这个内容复制粘贴到text框内。<br>新建class后 会自动生成注释。</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-      
-    
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    
   </section>
 
   
@@ -2029,7 +2022,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">12</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2081,7 +2074,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">8</span>
+                      
+                    
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">标签</span>
                   
                 </div>

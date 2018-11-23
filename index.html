@@ -335,6 +335,176 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/关于a标签实效的一些原因和解决办法/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="employeeeee/zhou">
+      <meta itemprop="description" content="Dont you want some of that">
+      <meta itemprop="image" content="/images/timg.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I got the most Time in the world">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/23/关于a标签实效的一些原因和解决办法/" itemprop="url">
+                  关于a标签实效的一些原因和解决办法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-23 09:19:55 / 修改时间：09:29:01" itemprop="dateCreated datePublished" datetime="2018-11-23T09:19:55+08:00">2018-11-23</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/web相关/" itemprop="url" rel="index"><span itemprop="name">web相关</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>在项目的过程中 web前台出现了一个状态 就是a标签没有效果,不能点击不能跳转.然后找了一下原因 并附上解决办法.</p>
+</blockquote>
+<p>导致<code>&lt;a&gt;</code>标签不能使用的原因是因为,在你放<code>&lt;a&gt;</code>标签的div的上层有其他的div遮挡住了.导致你不能点击到你的<code>&lt;a&gt;</code>标签,所以首先要让自己能<br>    点到<code>&lt;a&gt;</code>标签就可以.<br>    第一种方式 可以通过z-index的方式来解决,把你遮挡住标签的div放到下边,就是在你上层div中添加一条css属性<br>    <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">z-index</span><span class="selector-pseudo">:-1</span></span><br></pre></td></tr></table></figure></p>
+<pre><code>&lt;!--more--&gt;
+
+   但是`z-index`属性是必须在position为`absolute` `relative` `fixed`的情况下才可以使用.
+而且在我的项目中,我的上级div也是有`&lt;a&gt;`标签的.使用z-index属性之后,上级div中的&apos;&lt;a&gt;&apos;标签页不能使用了.
+所以需要修改上级div大小,并修改相应的padding和margin属性.
+这个就需要根据实际情况调整.但是是可以保证每个div中的标签都可以使用的.
+</code></pre>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+      
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/20/ssm数据库有值后台取值为空/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1806,178 +1976,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/Hive相关/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="employeeeee/zhou">
-      <meta itemprop="description" content="Dont you want some of that">
-      <meta itemprop="image" content="/images/timg.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I got the most Time in the world">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/04/Hive相关/" itemprop="url">
-                  Hive相关
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-04 21:48:11 / 修改时间：21:48:36" itemprop="dateCreated datePublished" datetime="2018-11-04T21:48:11+08:00">2018-11-04</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/大数据/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="Hive-的简介"><a href="#Hive-的简介" class="headerlink" title="Hive 的简介"></a>Hive 的简介</h4><p>Hive 蜂巢  是一种数据仓库工具  要明确的是Hive知识一种工具    可以用Hive将结构化的数据文件映射为一张数据库表  并提供完整的SQL 查询功能 可以将Sql 语句 转换为MapReduce任务运行<br>所以Hive 本身是不具备存储功能的 要将它和数据库区分开</p>
-<h4 id="Hive的来源"><a href="#Hive的来源" class="headerlink" title="Hive的来源"></a>Hive的来源</h4><p>Hive是Facebook 开发的构建于Hadoop集群之上的数据仓库应用 它提供了 类似于SQL语法的HQL语句作为数据访问接口.<br>这使普通分析人员在应用HADOOP的过程中更加容易学习.至于Facebook为什么使用hadoop和Hive组建数据仓库 大致原因如下:</p>
-<ol>
-<li>Facebook的数据仓库开始是构建于MySQL之上的,但是随着数据量的增加 查询需要的时间太久了</li>
-<li>当数据量达到1TB 时 MySQL后台进程就崩溃了,所以Facebook决定把数据仓库转移到Oracle.<code>这次转移也付出了很多的代价</code></li>
-<li>Oracle虽然可以应对几TB的数据 但是在手机用户点击流数据(每天大约400gb)后 Oracle 也支持永恒不住了 由此要考虑新的数据仓库方案
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/11/04/Hive相关/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-         
-          <!--/noindex-->
-        
-      
-    </li></ol></div>
-
-    
-
-    
-    
-    
-
-      
-    
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    
   </section>
 
   
@@ -2027,7 +2025,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">13</span>
+                    <span class="site-state-item-count">14</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2050,7 +2048,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">分类</span>
                   
                 </div>
@@ -2083,7 +2083,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">10</span>
+                      
+                    
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">标签</span>
                   
                 </div>

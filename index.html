@@ -389,7 +389,7 @@
                 
               
 
-              <time title="创建时间：2018-11-28 10:15:24 / 修改时间：11:03:56" itemprop="dateCreated datePublished" datetime="2018-11-28T10:15:24+08:00">2018-11-28</time>
+              <time title="创建时间：2018-11-28 10:15:24 / 修改时间：16:36:36" itemprop="dateCreated datePublished" datetime="2018-11-28T10:15:24+08:00">2018-11-28</time>
             
 
             
@@ -446,11 +446,17 @@
 
       
         
+          <p>一直都是在用idea搭建单项目的工程,一方面是项目需要也是想要学习一下,于是用idea搭建一个聚合的项目.<br>idea搭聚合项目跟eclipse还是有一些区别的,使用的过程中也是遇到了不少坑,解决了之后记录一下,希望对刚想搭建聚合项目的朋友有所帮助.</p>
+<p>项目主要的层次为<code>common-pojo-mapper-service-api</code>这样的形式的.<br><img src="https:www.zhouzihao.xyz/image/polymerization/1.jpg" alt="项目结构"><br></p>
+          <!--noindex-->
           
-            <p>一直都是在用idea搭建单项目的工程,一方面是项目需要也是想要学习一下,于是用idea搭建一个聚合的项目.<br>idea搭聚合项目跟eclipse还是有一些区别的,使用的过程中也是遇到了不少坑,解决了之后记录一下,希望对刚想搭建聚合项目的朋友有所帮助.</p>
-<p>项目主要的层次为<code>common-pojo-mapper-service-api</code>这样的形式的.<br><img src="image/polymerization/1.jpg" alt="项目结构"></p>
-
-          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/11/28/使用idea搭建一个聚合项目/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+         
+          <!--/noindex-->
         
       
     </div>
@@ -959,7 +965,7 @@
         
           <p>之前在测试了 一对一的方式后<br>又测试了一下一对多的方式,具体的关系为.一个班级有一个老师有很多学生.<br>在数据库中新建学生表 并存入数据.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> orm_student(</span><br><span class="line">s_id <span class="built_in">int</span> <span class="keyword">identity</span>(<span class="number">14301101</span>,<span class="number">1</span>) primary <span class="keyword">key</span> ,</span><br><span class="line">s_name <span class="built_in">varchar</span>(<span class="number">20</span>),</span><br><span class="line">class_id <span class="built_in">int</span></span><br><span class="line">) </span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orm_student <span class="keyword">values</span>(<span class="string">'张三'</span>,<span class="number">1401</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orm_student <span class="keyword">values</span>(<span class="string">'李四'</span>,<span class="number">1401</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orm_student <span class="keyword">values</span>(<span class="string">'赵武'</span>,<span class="number">1401</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orm_student <span class="keyword">values</span>(<span class="string">'刘能'</span>,<span class="number">1401</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orm_student <span class="keyword">values</span>(<span class="string">'王大麻'</span>,<span class="number">1401</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orm_student <span class="keyword">values</span>(<span class="string">'王心'</span>,<span class="number">1402</span>)</span><br></pre></td></tr></table></figure></p>
 <p>然后写好对应的实体类就行了,因为是查询class来搜索到所有学生的.<br>所以在测试时没有写学生相关的mapper文件等.并且要在class的实体类中,添加一条<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> List&lt;Student&gt; studentList;</span><br></pre></td></tr></table></figure></p>
-<p>用来查询学生的信息.<br>
+<p>用来查询学生的信息.<br></p>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -971,7 +977,7 @@
           <!--/noindex-->
         
       
-    </p></div>
+    </div>
 
     
 
@@ -1416,7 +1422,7 @@
         
           <p>最近的一个项目中 涉及到了一个功能 是关于地图的数据联动<br>所以就需要用ajax来异步更新数据.<br>之前搭了一个springboot的项目.所以就用在这个项目上进行了一次尝试.<br>记录一下整个的过程 ,<br>希望会对刚学习ajax的同学有所帮助.</p>
 <h4 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路:"></a>设计思路:</h4><p>前台的div中有一个数字 在前台获取到这个id 然后传到后台<br>后台获取到id为这个值得对象.<br>再将这个对象在前台展示出来.</p>
-<h4 id="出现的问题和解决办法"><a href="#出现的问题和解决办法" class="headerlink" title="出现的问题和解决办法."></a>出现的问题和解决办法.</h4><p>在前台的div中写了一个数字1<br><code>&lt;div id=&quot;demo&quot;&gt;1&lt;/div&gt;</code> 然后在js中通过 <code>document.getEletmentById(&quot;demo&quot;).innerHTML</code>;<br>获取到了div中的值.然后在ajax的data的text标签中,然后后台通过<code>httpServletRequest.getParameter(&quot;text&quot;)</code>这个id,通过之前写过的跟去id获取对象的方法.<br>来获取这个对象,放到list中,在通过遍历写出来.后台先是报了一个错误.因为通过<code>httpServletRequest.getParameter</code>获取到的是一个String值.但是我的id是一个<br>int值,解决的办法是通过”integer.valueof()”将string类型转换成了integer.然后运行时报了一个”null”的错误.开始以为是空指针的错误,后来发现是因为<code>integer.valueof</code><br>的字符串是空值会报的错.因为不确定是因为转型的原因还是取值问题,所以在转型的语句上边加了一个<code>sout</code>的语句.做了一个输出.并且在前台取值后加了一个<code>alert.</code><br>然后取消转型 直接<code>sout</code>获取到的值.运行后发现前台没问题.后台输出了一个null后,输出了正常获取到的id.<br>考虑到可能是加载的问题.<br>
+<h4 id="出现的问题和解决办法"><a href="#出现的问题和解决办法" class="headerlink" title="出现的问题和解决办法."></a>出现的问题和解决办法.</h4><p>在前台的div中写了一个数字1<br><code>&lt;div id=&quot;demo&quot;&gt;1&lt;/div&gt;</code> 然后在js中通过 <code>document.getEletmentById(&quot;demo&quot;).innerHTML</code>;<br>获取到了div中的值.然后在ajax的data的text标签中,然后后台通过<code>httpServletRequest.getParameter(&quot;text&quot;)</code>这个id,通过之前写过的跟去id获取对象的方法.<br>来获取这个对象,放到list中,在通过遍历写出来.后台先是报了一个错误.因为通过<code>httpServletRequest.getParameter</code>获取到的是一个String值.但是我的id是一个<br>int值,解决的办法是通过”integer.valueof()”将string类型转换成了integer.然后运行时报了一个”null”的错误.开始以为是空指针的错误,后来发现是因为<code>integer.valueof</code><br>的字符串是空值会报的错.因为不确定是因为转型的原因还是取值问题,所以在转型的语句上边加了一个<code>sout</code>的语句.做了一个输出.并且在前台取值后加了一个<code>alert.</code><br>然后取消转型 直接<code>sout</code>获取到的值.运行后发现前台没问题.后台输出了一个null后,输出了正常获取到的id.<br>考虑到可能是加载的问题.<br></p>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -1428,7 +1434,7 @@
           <!--/noindex-->
         
       
-    </p></div>
+    </div>
 
     
 
@@ -1584,7 +1590,7 @@
       
         
           <p>公司最近写的项目需要联动 然后要用到ajax的技术,虽然以前在项目中用到过ajax 但是没有很好地理解<br>晚上的时候 仔细的想了一想 ajax的用法 在这里记录一下</p>
-<p>因为之前写过echarts 后台传值的时候是通过ajax传的,个人觉得后台传值还是比较简单的.<br>理论上来说,就是通过sql语句在数据库中进行取值后 将取到的值放在list<br>在controller 把 list放到model中 然后通过遍历 取出数值. 然后可以根据实际项目的需要<br>将不同的属性放在不同的数组中,<br>再在对应的位置将内容取出来.<br>
+<p>因为之前写过echarts 后台传值的时候是通过ajax传的,个人觉得后台传值还是比较简单的.<br>理论上来说,就是通过sql语句在数据库中进行取值后 将取到的值放在list<br>在controller 把 list放到model中 然后通过遍历 取出数值. 然后可以根据实际项目的需要<br>将不同的属性放在不同的数组中,<br>再在对应的位置将内容取出来.<br></p>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -1596,7 +1602,7 @@
           <!--/noindex-->
         
       
-    </p></div>
+    </div>
 
     
 
@@ -1763,7 +1769,7 @@
 
       
         
-          <p>Hive是建立在Hadoop上的 是针对MapReduce开发的技术 Hive的组件主要分为两类: 客户端组件和服务端组件. 下面我们对这些组件进行逐一说明.<br>1) 客户端组件<br>CLI: Command Line Interface,命令行接口 最常用的客户端组件就是CLI CLI启动的时候 会同时启动一个Hive副本<br>Client: Client是Hive的客户端 用于连接Hive Server 在启动Client模式的时候 需要指出Hive Server 所在的节点 , 并且在该节点启动Hive Server<br>图4-2 所示的结构图没有写上 Thrift客户端 但是Hive架构的许多客户端接口 都是建立在Thrift客户端上的 包括JDBC 和 ODBC接口<br>Web GUI : Hive 客户端 提供 了一种通过网页访问Hive 所提供的服务的方式 这个接口duiying`Hive的HWI(Hive Web Interface) 组件 使用前要启动HWI服务<br>
+          <p>Hive是建立在Hadoop上的 是针对MapReduce开发的技术 Hive的组件主要分为两类: 客户端组件和服务端组件. 下面我们对这些组件进行逐一说明.<br>1) 客户端组件<br>CLI: Command Line Interface,命令行接口 最常用的客户端组件就是CLI CLI启动的时候 会同时启动一个Hive副本<br>Client: Client是Hive的客户端 用于连接Hive Server 在启动Client模式的时候 需要指出Hive Server 所在的节点 , 并且在该节点启动Hive Server<br>图4-2 所示的结构图没有写上 Thrift客户端 但是Hive架构的许多客户端接口 都是建立在Thrift客户端上的 包括JDBC 和 ODBC接口<br>Web GUI : Hive 客户端 提供 了一种通过网页访问Hive 所提供的服务的方式 这个接口duiying`Hive的HWI(Hive Web Interface) 组件 使用前要启动HWI服务<br></p>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -1775,7 +1781,7 @@
           <!--/noindex-->
         
       
-    </p></div>
+    </div>
 
     
 
@@ -1936,7 +1942,7 @@
 <li>查询语言 由于SQL被广泛地应用在数据仓库中 一次针对Hive的特性设计了类SQL的查询语言HQL 熟悉SQL的开发者可以很方便的使用Hive进行开发.</li>
 <li>索引 Hive在加载数据的过程中 不会对数据进行任何处理 甚至不会对数据进行扫描 因此也没有对数据中的某些Key建立索引,Hive要访问数据中满足条件的特定值时<br>需要暴力扫描整个数据 因此访问延迟高,但由于MapReduce的引入 Hive可以进行并行访问数据 因此即使没有索引 对于大数据量的访问 Hive仍然可以体现出优势</li>
 <li>数据格式 Hive中没有定义专门的数据格式 数据格式可以由用户指定 用户定义数据格式需要指定三个属性: 列分隔符 行分隔符 以及读取文件数据的方法 .在加载过程中不会对数据本省进行修改 知识复制或者移动到相应的HDFS目录中.而数据库会按照一定的组织存储 过程耗时</li>
-<li>执行 Hive查询的执行是通过 MapReduce实现 而数据库有自己的执行引擎.
+<li>执行 Hive查询的执行是通过 MapReduce实现 而数据库有自己的执行引擎.</li></ol>
           <!--noindex-->
           
             <div class="post-button text-center">
@@ -1948,7 +1954,7 @@
           <!--/noindex-->
         
       
-    </li></ol></div>
+    </div>
 
     
 

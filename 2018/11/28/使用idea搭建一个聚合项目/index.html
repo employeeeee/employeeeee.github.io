@@ -116,12 +116,20 @@
 <meta property="og:site_name" content="I got the most Time in the world">
 <meta property="og:description" content="一直都是在用idea搭建单项目的工程,一方面是项目需要也是想要学习一下,于是用idea搭建一个聚合的项目.idea搭聚合项目跟eclipse还是有一些区别的,使用的过程中也是遇到了不少坑,解决了之后记录一下,希望对刚想搭建聚合项目的朋友有所帮助. 项目主要的层次为common-pojo-mapper-service-api这样的形式的.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2018/11/28/使用idea搭建一个聚合项目/image/polymerization/1.jpg">
-<meta property="og:updated_time" content="2018-11-28T03:03:56.752Z">
+<meta property="og:image" content="https://www.zhouzihao.xyz/image/polymerization/1.jpg">
+<meta property="og:image" content="https://www.zhouzihao.xyz/image/polymerization/2.jpg">
+<meta property="og:image" content="https://www.zhouzihao.xyz/image/polymerization/3.jpg">
+<meta property="og:image" content="https://www.zhouzihao.xyz/image/polymerization/4.jpg">
+<meta property="og:image" content="https://www.zhouzihao.xyz/image/polymerization/5.jpg">
+<meta property="og:image" content="https://www.zhouzihao.xyz/image/polymerization/6.jpg">
+<meta property="og:image" content="https://www.zhouzihao.xyz/image/polymerization/7.jpg">
+<meta property="og:image" content="https://www.zhouzihao.xyz/image/polymerization/8.jpg">
+<meta property="og:image" content="https://www.zhouzihao.xyz/image/polymerization/9.jpg">
+<meta property="og:updated_time" content="2018-11-28T08:36:36.125Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用idea搭建一个聚合项目">
 <meta name="twitter:description" content="一直都是在用idea搭建单项目的工程,一方面是项目需要也是想要学习一下,于是用idea搭建一个聚合的项目.idea搭聚合项目跟eclipse还是有一些区别的,使用的过程中也是遇到了不少坑,解决了之后记录一下,希望对刚想搭建聚合项目的朋友有所帮助. 项目主要的层次为common-pojo-mapper-service-api这样的形式的.">
-<meta name="twitter:image" content="http://yoursite.com/2018/11/28/使用idea搭建一个聚合项目/image/polymerization/1.jpg">
+<meta name="twitter:image" content="https://www.zhouzihao.xyz/image/polymerization/1.jpg">
 
 
 
@@ -388,7 +396,7 @@
                 
               
 
-              <time title="创建时间：2018-11-28 10:15:24 / 修改时间：11:03:56" itemprop="dateCreated datePublished" datetime="2018-11-28T10:15:24+08:00">2018-11-28</time>
+              <time title="创建时间：2018-11-28 10:15:24 / 修改时间：16:36:36" itemprop="dateCreated datePublished" datetime="2018-11-28T10:15:24+08:00">2018-11-28</time>
             
 
             
@@ -445,7 +453,24 @@
 
       
         <p>一直都是在用idea搭建单项目的工程,一方面是项目需要也是想要学习一下,于是用idea搭建一个聚合的项目.<br>idea搭聚合项目跟eclipse还是有一些区别的,使用的过程中也是遇到了不少坑,解决了之后记录一下,希望对刚想搭建聚合项目的朋友有所帮助.</p>
-<p>项目主要的层次为<code>common-pojo-mapper-service-api</code>这样的形式的.<br><img src="image/polymerization/1.jpg" alt="项目结构"></p>
+<p>项目主要的层次为<code>common-pojo-mapper-service-api</code>这样的形式的.<br><img src="https:www.zhouzihao.xyz/image/polymerization/1.jpg" alt="项目结构"><br><a id="more"></a></p>
+<ul>
+<li>首先先新建一个新的项目 用来存放你所有的子项目 建立项目时候选择Maven 然后不需要使用模板 直接next 就可以<br><img src="https:www.zhouzihao.xyz/image/polymerization/2.jpg" alt="新建项目"></li>
+</ul>
+<p><code>GroupId</code>和’ArtifactId’完全是按照个人喜好来写的,填写好之后,直接next<br><img src="https:www.zhouzihao.xyz/image/polymerization/3.jpg" alt="新建项目"></p>
+<p>这里是可以根据你上一步填写的<code>ArtfactId</code>自动生成的 可以修改,注意一些这些名字要一致就可以了,然后点击finish 就可以了.<br><img src="https:www.zhouzihao.xyz/image/polymerization/4.jpg" alt="新建项目"></p>
+<p> 然后你的项目中出现第一个项目 也就是你的父项目,主要的作用其实就是一个管理和存储其他项目的空间.<br>然后选中你建立好的项目,右键选择<code>Module</code>,来建立你的子项目<br><img src="https:www.zhouzihao.xyz/image/polymerization/5.jpg" alt="新建项目"></p>
+<p>和之前的一样 选择maven 不需要选择模板 然后点击next 会进入到这个界面<br><img src="https:www.zhouzihao.xyz/image/polymerization/6.jpg" alt="新建项目"><br>Parent会自动选择为你当前选择的项目,当然不放心的话你也可以再点击选择一下.GroupId是和你parent的groupid是一样的,<br>AtifactId 写一下你子项目的名称 前边也提到了我们的结构 所以这个项目起名叫做common<br>然后下一步 finish即可.<br>然后在生成的pom.xml文件中,导入你要使用的maven,这个还是根据自己实际项目使用来决定的.这里的pom文件可以把你要用到的所有包通过maven都导入进来,<br>因为你之后的子项目都是可以继承这些包的.</p>
+<p>然后再建立第二个子项目,跟前边的common一样,建立好后,进入设置<br><img src="https:www.zhouzihao.xyz/image/polymerization/7.jpg" alt="新建项目"><br>点击选择common 就可以看见你导入的包中有了common的文件夹.</p>
+<p>之后的和前边的也没有什么特别多的不同,一直建立到api这个项目,因为api项目是要向web提供接口的,<br>也就是说是最后一个子项目,那么就需要使它运行起来.<br>在api项目中新建一个类<code>Application</code>(名字是可以自己起的,主要的是这个类的作用)<br><img src="https:www.zhouzihao.xyz/image/polymerization/8.jpg" alt="新建项目"><br>然后在这个类中加入注释<br><code>@SptingBootApplication</code></p>
+<blockquote>
+<p>个人具体代码如下</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FollowerApplication</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(FollowerApplication.class,args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后为了测试 写一个<code>controller</code><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorldController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/hello"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">Hello</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Hello world"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在resource文件下,新建一个<code>yml</code>文件或者<code>properties</code>‘文件’配置一下端口号</p>
+<p>因为返回的不是页面而是一个字符串,所以用的是<code>@RestController</code></p>
+<p>然后<br><img src="https:www.zhouzihao.xyz/image/polymerization/9.jpg" alt="新建项目"><br>之后 再运行你刚才写的<code>Application</code>  输入你的地址<br>就能看见你的<code>hello world</code>了</p>
 
       
     </div>
@@ -468,7 +493,7 @@
   <p><span>本文标题:</span><a href="/2018/11/28/使用idea搭建一个聚合项目/">使用idea搭建一个聚合项目</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 employeeeee/zhou 的个人博客">employeeeee/zhou</a></p>
   <p><span>发布时间:</span>2018年11月28日 - 10:11</p>
-  <p><span>最后更新:</span>2018年11月28日 - 11:11</p>
+  <p><span>最后更新:</span>2018年11月28日 - 16:11</p>
   <p><span>原始链接:</span><a href="/2018/11/28/使用idea搭建一个聚合项目/" title="使用idea搭建一个聚合项目">http://yoursite.com/2018/11/28/使用idea搭建一个聚合项目/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2018/11/28/使用idea搭建一个聚合项目/" aria-label="复制成功！"></i></span>
   </p>

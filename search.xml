@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[使用idea搭建一个聚合项目]]></title>
     <url>%2F2018%2F11%2F28%2F%E4%BD%BF%E7%94%A8idea%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%81%9A%E5%90%88%E9%A1%B9%E7%9B%AE%2F</url>
-    <content type="text"><![CDATA[]]></content>
+    <content type="text"><![CDATA[一直都是在用idea搭建单项目的工程,一方面是项目需要也是想要学习一下,于是用idea搭建一个聚合的项目.idea搭聚合项目跟eclipse还是有一些区别的,使用的过程中也是遇到了不少坑,解决了之后记录一下,希望对刚想搭建聚合项目的朋友有所帮助. 项目主要的层次为common-pojo-mapper-service-api这样的形式的.]]></content>
       <categories>
         <category>idea相关</category>
       </categories>

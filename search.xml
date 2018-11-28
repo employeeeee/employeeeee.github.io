@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[使用idea搭建一个聚合项目]]></title>
+    <url>%2F2018%2F11%2F28%2F%E4%BD%BF%E7%94%A8idea%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AA%E8%81%9A%E5%90%88%E9%A1%B9%E7%9B%AE%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[关于a标签实效的一些原因和解决办法]]></title>
     <url>%2F2018%2F11%2F23%2F%E5%85%B3%E4%BA%8Ea%E6%A0%87%E7%AD%BE%E5%AE%9E%E6%95%88%E7%9A%84%E4%B8%80%E4%BA%9B%E5%8E%9F%E5%9B%A0%E5%92%8C%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%2F</url>
     <content type="text"><![CDATA[在项目的过程中 web前台出现了一个状态 就是a标签没有效果,不能点击不能跳转.然后找了一下原因 并附上解决办法. 导致&lt;a&gt;标签不能使用的原因是因为,在你放&lt;a&gt;标签的div的上层有其他的div遮挡住了.导致你不能点击到你的&lt;a&gt;标签,所以首先要让自己能 点到&lt;a&gt;标签就可以. 第一种方式 可以通过z-index的方式来解决,把你遮挡住标签的div放到下边,就是在你上层div中添加一条css属性 1z-index:-1 &lt;!--more--&gt; 但是`z-index`属性是必须在position为`absolute` `relative` `fixed`的情况下才可以使用. 而且在我的项目中,我的上级div也是有`&lt;a&gt;`标签的.使用z-index属性之后,上级div中的&apos;&lt;a&gt;&apos;标签页不能使用了. 所以需要修改上级div大小,并修改相应的padding和margin属性. 这个就需要根据实际情况调整.但是是可以保证每个div中的标签都可以使用的.]]></content>

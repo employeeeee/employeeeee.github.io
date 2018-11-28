@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="I got the most Time in the world">
 <meta property="og:description" content="一直都是在用idea搭建单项目的工程,一方面是项目需要也是想要学习一下,于是用idea搭建一个聚合的项目.idea搭聚合项目跟eclipse还是有一些区别的,使用的过程中也是遇到了不少坑,解决了之后记录一下,希望对刚想搭建聚合项目的朋友有所帮助. 项目主要的层次为common-pojo-mapper-service-api这样的形式的.">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://www.zhouzihao.xyz/image/polymerization/1.jpg">
+<meta property="og:image" content="https://www.zhouzihao.xyz/1.jpg">
 <meta property="og:image" content="https://www.zhouzihao.xyz/image/polymerization/2.jpg">
 <meta property="og:image" content="https://www.zhouzihao.xyz/image/polymerization/3.jpg">
 <meta property="og:image" content="https://www.zhouzihao.xyz/image/polymerization/4.jpg">
@@ -125,11 +125,11 @@
 <meta property="og:image" content="https://www.zhouzihao.xyz/image/polymerization/7.jpg">
 <meta property="og:image" content="https://www.zhouzihao.xyz/image/polymerization/8.jpg">
 <meta property="og:image" content="https://www.zhouzihao.xyz/image/polymerization/9.jpg">
-<meta property="og:updated_time" content="2018-11-28T08:36:36.125Z">
+<meta property="og:updated_time" content="2018-11-28T08:41:56.902Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用idea搭建一个聚合项目">
 <meta name="twitter:description" content="一直都是在用idea搭建单项目的工程,一方面是项目需要也是想要学习一下,于是用idea搭建一个聚合的项目.idea搭聚合项目跟eclipse还是有一些区别的,使用的过程中也是遇到了不少坑,解决了之后记录一下,希望对刚想搭建聚合项目的朋友有所帮助. 项目主要的层次为common-pojo-mapper-service-api这样的形式的.">
-<meta name="twitter:image" content="https://www.zhouzihao.xyz/image/polymerization/1.jpg">
+<meta name="twitter:image" content="https://www.zhouzihao.xyz/1.jpg">
 
 
 
@@ -396,7 +396,7 @@
                 
               
 
-              <time title="创建时间：2018-11-28 10:15:24 / 修改时间：16:36:36" itemprop="dateCreated datePublished" datetime="2018-11-28T10:15:24+08:00">2018-11-28</time>
+              <time title="创建时间：2018-11-28 10:15:24 / 修改时间：16:41:56" itemprop="dateCreated datePublished" datetime="2018-11-28T10:15:24+08:00">2018-11-28</time>
             
 
             
@@ -453,16 +453,16 @@
 
       
         <p>一直都是在用idea搭建单项目的工程,一方面是项目需要也是想要学习一下,于是用idea搭建一个聚合的项目.<br>idea搭聚合项目跟eclipse还是有一些区别的,使用的过程中也是遇到了不少坑,解决了之后记录一下,希望对刚想搭建聚合项目的朋友有所帮助.</p>
-<p>项目主要的层次为<code>common-pojo-mapper-service-api</code>这样的形式的.<br><img src="https:www.zhouzihao.xyz/image/polymerization/1.jpg" alt="项目结构"><br><a id="more"></a></p>
+<p>项目主要的层次为<code>common-pojo-mapper-service-api</code>这样的形式的.<br><img src="https://www.zhouzihao.xyz/1.jpg" alt="项目结构"><br><a id="more"></a></p>
 <ul>
-<li>首先先新建一个新的项目 用来存放你所有的子项目 建立项目时候选择Maven 然后不需要使用模板 直接next 就可以<br><img src="https:www.zhouzihao.xyz/image/polymerization/2.jpg" alt="新建项目"></li>
+<li>首先先新建一个新的项目 用来存放你所有的子项目 建立项目时候选择Maven 然后不需要使用模板 直接next 就可以<br><img src="https://www.zhouzihao.xyz/image/polymerization/2.jpg" alt="新建项目"></li>
 </ul>
-<p><code>GroupId</code>和’ArtifactId’完全是按照个人喜好来写的,填写好之后,直接next<br><img src="https:www.zhouzihao.xyz/image/polymerization/3.jpg" alt="新建项目"></p>
-<p>这里是可以根据你上一步填写的<code>ArtfactId</code>自动生成的 可以修改,注意一些这些名字要一致就可以了,然后点击finish 就可以了.<br><img src="https:www.zhouzihao.xyz/image/polymerization/4.jpg" alt="新建项目"></p>
-<p> 然后你的项目中出现第一个项目 也就是你的父项目,主要的作用其实就是一个管理和存储其他项目的空间.<br>然后选中你建立好的项目,右键选择<code>Module</code>,来建立你的子项目<br><img src="https:www.zhouzihao.xyz/image/polymerization/5.jpg" alt="新建项目"></p>
-<p>和之前的一样 选择maven 不需要选择模板 然后点击next 会进入到这个界面<br><img src="https:www.zhouzihao.xyz/image/polymerization/6.jpg" alt="新建项目"><br>Parent会自动选择为你当前选择的项目,当然不放心的话你也可以再点击选择一下.GroupId是和你parent的groupid是一样的,<br>AtifactId 写一下你子项目的名称 前边也提到了我们的结构 所以这个项目起名叫做common<br>然后下一步 finish即可.<br>然后在生成的pom.xml文件中,导入你要使用的maven,这个还是根据自己实际项目使用来决定的.这里的pom文件可以把你要用到的所有包通过maven都导入进来,<br>因为你之后的子项目都是可以继承这些包的.</p>
-<p>然后再建立第二个子项目,跟前边的common一样,建立好后,进入设置<br><img src="https:www.zhouzihao.xyz/image/polymerization/7.jpg" alt="新建项目"><br>点击选择common 就可以看见你导入的包中有了common的文件夹.</p>
-<p>之后的和前边的也没有什么特别多的不同,一直建立到api这个项目,因为api项目是要向web提供接口的,<br>也就是说是最后一个子项目,那么就需要使它运行起来.<br>在api项目中新建一个类<code>Application</code>(名字是可以自己起的,主要的是这个类的作用)<br><img src="https:www.zhouzihao.xyz/image/polymerization/8.jpg" alt="新建项目"><br>然后在这个类中加入注释<br><code>@SptingBootApplication</code></p>
+<p><code>GroupId</code>和’ArtifactId’完全是按照个人喜好来写的,填写好之后,直接next<br><img src="https://www.zhouzihao.xyz/image/polymerization/3.jpg" alt="新建项目"></p>
+<p>这里是可以根据你上一步填写的<code>ArtfactId</code>自动生成的 可以修改,注意一些这些名字要一致就可以了,然后点击finish 就可以了.<br><img src="https://www.zhouzihao.xyz/image/polymerization/4.jpg" alt="新建项目"></p>
+<p> 然后你的项目中出现第一个项目 也就是你的父项目,主要的作用其实就是一个管理和存储其他项目的空间.<br>然后选中你建立好的项目,右键选择<code>Module</code>,来建立你的子项目<br><img src="https://www.zhouzihao.xyz/image/polymerization/5.jpg" alt="新建项目"></p>
+<p>和之前的一样 选择maven 不需要选择模板 然后点击next 会进入到这个界面<br><img src="https://www.zhouzihao.xyz/image/polymerization/6.jpg" alt="新建项目"><br>Parent会自动选择为你当前选择的项目,当然不放心的话你也可以再点击选择一下.GroupId是和你parent的groupid是一样的,<br>AtifactId 写一下你子项目的名称 前边也提到了我们的结构 所以这个项目起名叫做common<br>然后下一步 finish即可.<br>然后在生成的pom.xml文件中,导入你要使用的maven,这个还是根据自己实际项目使用来决定的.这里的pom文件可以把你要用到的所有包通过maven都导入进来,<br>因为你之后的子项目都是可以继承这些包的.</p>
+<p>然后再建立第二个子项目,跟前边的common一样,建立好后,进入设置<br><img src="https://www.zhouzihao.xyz/image/polymerization/7.jpg" alt="新建项目"><br>点击选择common 就可以看见你导入的包中有了common的文件夹.</p>
+<p>之后的和前边的也没有什么特别多的不同,一直建立到api这个项目,因为api项目是要向web提供接口的,<br>也就是说是最后一个子项目,那么就需要使它运行起来.<br>在api项目中新建一个类<code>Application</code>(名字是可以自己起的,主要的是这个类的作用)<br><img src="https://www.zhouzihao.xyz/image/polymerization/8.jpg" alt="新建项目"><br>然后在这个类中加入注释<br><code>@SptingBootApplication</code></p>
 <blockquote>
 <p>个人具体代码如下</p>
 </blockquote>

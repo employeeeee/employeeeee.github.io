@@ -359,6 +359,674 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/关于a标签实效的一些原因和解决办法/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="employeeeee/zhou">
+      <meta itemprop="description" content="Dont you want some of that">
+      <meta itemprop="image" content="/images/timg.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I got the most Time in the world">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/23/关于a标签实效的一些原因和解决办法/" itemprop="url">
+                  关于a标签实效的一些原因和解决办法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-23 09:19:55 / 修改时间：09:29:01" itemprop="dateCreated datePublished" datetime="2018-11-23T09:19:55+08:00">2018-11-23</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/web相关/" itemprop="url" rel="index"><span itemprop="name">web相关</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>在项目的过程中 web前台出现了一个状态 就是a标签没有效果,不能点击不能跳转.然后找了一下原因 并附上解决办法.</p>
+</blockquote>
+<p>导致<code>&lt;a&gt;</code>标签不能使用的原因是因为,在你放<code>&lt;a&gt;</code>标签的div的上层有其他的div遮挡住了.导致你不能点击到你的<code>&lt;a&gt;</code>标签,所以首先要让自己能<br>    点到<code>&lt;a&gt;</code>标签就可以.<br>    第一种方式 可以通过z-index的方式来解决,把你遮挡住标签的div放到下边,就是在你上层div中添加一条css属性<br>    <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">z-index</span><span class="selector-pseudo">:-1</span></span><br></pre></td></tr></table></figure></p>
+<pre><code>&lt;!--more--&gt;
+
+   但是`z-index`属性是必须在position为`absolute` `relative` `fixed`的情况下才可以使用.
+而且在我的项目中,我的上级div也是有`&lt;a&gt;`标签的.使用z-index属性之后,上级div中的&apos;&lt;a&gt;&apos;标签页不能使用了.
+所以需要修改上级div大小,并修改相应的padding和margin属性.
+这个就需要根据实际情况调整.但是是可以保证每个div中的标签都可以使用的.
+</code></pre>
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+      
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/20/ssm数据库有值后台取值为空/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="employeeeee/zhou">
+      <meta itemprop="description" content="Dont you want some of that">
+      <meta itemprop="image" content="/images/timg.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I got the most Time in the world">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/20/ssm数据库有值后台取值为空/" itemprop="url">
+                  ssm数据库列名有下划线导致查询名称为空
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-20 14:49:43" itemprop="dateCreated datePublished" datetime="2018-11-20T14:49:43+08:00">2018-11-20</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-11-21 17:42:31" itemprop="dateModified" datetime="2018-11-21T17:42:31+08:00">2018-11-21</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/ssm相关/" itemprop="url" rel="index"><span itemprop="name">ssm相关</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>今天在做项目是时候发现了一个问题<br>数据库可以查询到数据 但是在后台获取的是null<br>上网查了一下原因 最后发现是因为mybatis.xml配置的问题<br>可以自己新建一个xml文件 加入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE configuration PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;</span><br><span class="line">&quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;</span><br><span class="line">&lt;configuration&gt;</span><br><span class="line"> </span><br><span class="line">&lt;/configuration</span><br></pre></td></tr></table></figure></p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/11/20/ssm数据库有值后台取值为空/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+         
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+      
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/13/ajax和mybatis多表查询的配合使用/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="employeeeee/zhou">
+      <meta itemprop="description" content="Dont you want some of that">
+      <meta itemprop="image" content="/images/timg.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I got the most Time in the world">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/13/ajax和mybatis多表查询的配合使用/" itemprop="url">
+                  ajax和mybatis多表查询的配合使用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-13 09:40:16 / 修改时间：10:38:25" itemprop="dateCreated datePublished" datetime="2018-11-13T09:40:16+08:00">2018-11-13</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/ssm相关/" itemprop="url" rel="index"><span itemprop="name">ssm相关</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>之前在测试了 一对一的方式后<br>又测试了一下一对多的方式,具体的关系为.一个班级有一个老师有很多学生.<br>在数据库中新建学生表 并存入数据.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> orm_student(</span><br><span class="line">s_id <span class="built_in">int</span> <span class="keyword">identity</span>(<span class="number">14301101</span>,<span class="number">1</span>) primary <span class="keyword">key</span> ,</span><br><span class="line">s_name <span class="built_in">varchar</span>(<span class="number">20</span>),</span><br><span class="line">class_id <span class="built_in">int</span></span><br><span class="line">) </span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orm_student <span class="keyword">values</span>(<span class="string">'张三'</span>,<span class="number">1401</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orm_student <span class="keyword">values</span>(<span class="string">'李四'</span>,<span class="number">1401</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orm_student <span class="keyword">values</span>(<span class="string">'赵武'</span>,<span class="number">1401</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orm_student <span class="keyword">values</span>(<span class="string">'刘能'</span>,<span class="number">1401</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orm_student <span class="keyword">values</span>(<span class="string">'王大麻'</span>,<span class="number">1401</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orm_student <span class="keyword">values</span>(<span class="string">'王心'</span>,<span class="number">1402</span>)</span><br></pre></td></tr></table></figure></p>
+<p>然后写好对应的实体类就行了,因为是查询class来搜索到所有学生的.<br>所以在测试时没有写学生相关的mapper文件等.并且要在class的实体类中,添加一条<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> List&lt;Student&gt; studentList;</span><br></pre></td></tr></table></figure></p>
+<p>用来查询学生的信息.<br></p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/11/13/ajax和mybatis多表查询的配合使用/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+         
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+      
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/mybatis关联查询-1对1的查询/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="employeeeee/zhou">
+      <meta itemprop="description" content="Dont you want some of that">
+      <meta itemprop="image" content="/images/timg.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I got the most Time in the world">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/11/mybatis关联查询-1对1的查询/" itemprop="url">
+                  mybatis关联查询-1对1的查询
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-11-11 10:46:06 / 修改时间：11:22:51" itemprop="dateCreated datePublished" datetime="2018-11-11T10:46:06+08:00">2018-11-11</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>因为项目要做地图关联的功能,其中会有关联查询,今天就在自己电脑上先做了一个测试 是学生 老师 班级这样的一个关联查询.<br>先写的是老师和班级的查询 在这里是一个老师对应一个班级 要通过班级的id把这个班级的名称和教师的名称显示出来.<br>在数据库中先建立教师表和班级表.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--关联查询测试  班级表</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> orm_class(</span><br><span class="line">c_id <span class="built_in">integer</span> primary <span class="keyword">key</span>,</span><br><span class="line">c_name <span class="keyword">NVARCHAR</span>(<span class="number">20</span>),</span><br><span class="line">t_id <span class="built_in">integer</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 关联查询测试 教师表</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> orm_teacher(</span><br><span class="line">t_id <span class="built_in">integer</span> primary <span class="keyword">key</span>,</span><br><span class="line">t_name <span class="keyword">NVARCHAR</span>(<span class="number">20</span>),</span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/11/11/mybatis关联查询-1对1的查询/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+         
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+      
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/09/Hive的操作流程/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1332,675 +2000,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/Hive相关/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="employeeeee/zhou">
-      <meta itemprop="description" content="Dont you want some of that">
-      <meta itemprop="image" content="/images/timg.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I got the most Time in the world">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/04/Hive相关/" itemprop="url">
-                  Hive相关
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-04 21:48:11 / 修改时间：21:48:36" itemprop="dateCreated datePublished" datetime="2018-11-04T21:48:11+08:00">2018-11-04</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/大数据/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="Hive-的简介"><a href="#Hive-的简介" class="headerlink" title="Hive 的简介"></a>Hive 的简介</h4><p>Hive 蜂巢  是一种数据仓库工具  要明确的是Hive知识一种工具    可以用Hive将结构化的数据文件映射为一张数据库表  并提供完整的SQL 查询功能 可以将Sql 语句 转换为MapReduce任务运行<br>所以Hive 本身是不具备存储功能的 要将它和数据库区分开</p>
-<h4 id="Hive的来源"><a href="#Hive的来源" class="headerlink" title="Hive的来源"></a>Hive的来源</h4><p>Hive是Facebook 开发的构建于Hadoop集群之上的数据仓库应用 它提供了 类似于SQL语法的HQL语句作为数据访问接口.<br>这使普通分析人员在应用HADOOP的过程中更加容易学习.至于Facebook为什么使用hadoop和Hive组建数据仓库 大致原因如下:</p>
-<ol>
-<li>Facebook的数据仓库开始是构建于MySQL之上的,但是随着数据量的增加 查询需要的时间太久了</li>
-<li>当数据量达到1TB 时 MySQL后台进程就崩溃了,所以Facebook决定把数据仓库转移到Oracle.<code>这次转移也付出了很多的代价</code></li>
-<li>Oracle虽然可以应对几TB的数据 但是在手机用户点击流数据(每天大约400gb)后 Oracle 也支持永恒不住了 由此要考虑新的数据仓库方案</li></ol>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/11/04/Hive相关/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-         
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-      
-    
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/04/关于thymeleaf-layout布局的使用方式/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="employeeeee/zhou">
-      <meta itemprop="description" content="Dont you want some of that">
-      <meta itemprop="image" content="/images/timg.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I got the most Time in the world">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/04/关于thymeleaf-layout布局的使用方式/" itemprop="url">
-                  关于thymeleaf+layout布局的使用方式
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-04 10:11:48 / 修改时间：20:55:52" itemprop="dateCreated datePublished" datetime="2018-11-04T10:11:48+08:00">2018-11-04</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/ssm项目相关/" itemprop="url" rel="index"><span itemprop="name">ssm项目相关</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h5 id="最近在做项目时候用到了-layout布局的方式-相对方便了很多-记录一下-这个layout的效果是可以把网页的相同部分提取出来-只需要更改核心不一样的地方就可以了-也就是更改后边我们会提到的content部分"><a href="#最近在做项目时候用到了-layout布局的方式-相对方便了很多-记录一下-这个layout的效果是可以把网页的相同部分提取出来-只需要更改核心不一样的地方就可以了-也就是更改后边我们会提到的content部分" class="headerlink" title="最近在做项目时候用到了 layout布局的方式,相对方便了很多,记录一下.这个layout的效果是可以把网页的相同部分提取出来,只需要更改核心不一样的地方就可以了.也就是更改后边我们会提到的content部分."></a>最近在做项目时候用到了 layout布局的方式,相对方便了很多,记录一下.这个layout的效果是可以把网页的相同部分提取出来,只需要更改核心不一样的地方就可以了.也就是更改后边我们会提到的<code>content</code>部分.</h5><ol>
-<li>首先建立相同部分的html,这里我命名为layout.html,放在了`templates/layout’文件夹下,这个路径以后是会用到的,以下是我的layout的代码,比较粗糙.<br>但是应该会更好的帮助理解.<br>要提到几个重要的部分</li>
-</ol>
-<ul>
-<li>xmlns:th=”<a href="http://www.thymeleaf.org&quot;" target="_blank" rel="noopener">http://www.thymeleaf.org&quot;</a> 引入th</li>
-<li>xmlns:layout=”<a href="http://www.w3.org/1999/xhtml&quot;" target="_blank" rel="noopener">http://www.w3.org/1999/xhtml&quot;</a> 引入 thymeleaf</li>
-<li><div layout:fragment="content"></div>  你要将不同内容放置的位置</li>
-</ul>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/11/04/关于thymeleaf-layout布局的使用方式/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-         
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-      
-    
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/03/大数据的来源/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="employeeeee/zhou">
-      <meta itemprop="description" content="Dont you want some of that">
-      <meta itemprop="image" content="/images/timg.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I got the most Time in the world">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/03/大数据的来源/" itemprop="url">
-                  idea新建类自动生成注释
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-03 17:24:39" itemprop="dateCreated datePublished" datetime="2018-11-03T17:24:39+08:00">2018-11-03</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-11-04 20:33:53" itemprop="dateModified" datetime="2018-11-04T20:33:53+08:00">2018-11-04</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/idea的使用/" itemprop="url" rel="index"><span itemprop="name">idea的使用</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li>打开idea 使用ctrl+alt+s 打开设置。<br><img src="https://upload-images.jianshu.io/upload_images/10758270-f16f7ec231e1ddf5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>/*<em>
-</em>Created by 周子淏 on ${DATE} ${TIME}<br>*/<br>讲这个内容复制粘贴到text框内。<br>新建class后 会自动生成注释。</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-      
-    
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/03/FirstBlog/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="employeeeee/zhou">
-      <meta itemprop="description" content="Dont you want some of that">
-      <meta itemprop="image" content="/images/timg.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I got the most Time in the world">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/03/FirstBlog/" itemprop="url">
-                  firstBlog
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-03 16:58:46 / 修改时间：17:03:28" itemprop="dateCreated datePublished" datetime="2018-11-03T16:58:46+08:00">2018-11-03</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="这是我的一个博客"><a href="#这是我的一个博客" class="headerlink" title="这是我的一个博客"></a>这是我的一个博客</h4>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-      
-    
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2045,7 +2049,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2076,7 +2080,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">9</span>
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">分类</span>
                   
                 </div>
@@ -2119,7 +2125,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">15</span>
+                      
+                    
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">标签</span>
                   
                 </div>

@@ -108,17 +108,18 @@
 
 
 
-  <meta name="description" content="Dont you want some of that">
+  <meta name="description" content="HDFS的体系结构 NameNode: 名称节点   职责 HDFS的主节点 管理员 接收客户端(命令行和Java)的请求,穿件目录 上传数据 下载数据 删除数据 管理和维护HDFS的日志和元信息 日志文件(edits文件): 记录的是客户端的所有操作 体现了HDFS最新的状态 是一个二进制文件 位置: tmp/dfs/name/current edits_inprogress_000000000">
+<meta name="keywords" content="大数据">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HDFS的体系结构">
 <meta property="og:url" content="http://yoursite.com/2019/03/04/HDFS的体系结构/index.html">
 <meta property="og:site_name" content="I got the most Time in the world">
-<meta property="og:description" content="Dont you want some of that">
+<meta property="og:description" content="HDFS的体系结构 NameNode: 名称节点   职责 HDFS的主节点 管理员 接收客户端(命令行和Java)的请求,穿件目录 上传数据 下载数据 删除数据 管理和维护HDFS的日志和元信息 日志文件(edits文件): 记录的是客户端的所有操作 体现了HDFS最新的状态 是一个二进制文件 位置: tmp/dfs/name/current edits_inprogress_000000000">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-04T00:47:30.817Z">
+<meta property="og:updated_time" content="2019-03-04T03:17:25.523Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HDFS的体系结构">
-<meta name="twitter:description" content="Dont you want some of that">
+<meta name="twitter:description" content="HDFS的体系结构 NameNode: 名称节点   职责 HDFS的主节点 管理员 接收客户端(命令行和Java)的请求,穿件目录 上传数据 下载数据 删除数据 管理和维护HDFS的日志和元信息 日志文件(edits文件): 记录的是客户端的所有操作 体现了HDFS最新的状态 是一个二进制文件 位置: tmp/dfs/name/current edits_inprogress_000000000">
 
 
 
@@ -401,12 +402,34 @@
                 
               
 
-              <time title="创建时间：2019-03-04 08:47:30" itemprop="dateCreated datePublished" datetime="2019-03-04T08:47:30+08:00">2019-03-04</time>
+              <time title="创建时间：2019-03-04 08:47:30 / 修改时间：11:17:25" itemprop="dateCreated datePublished" datetime="2019-03-04T08:47:30+08:00">2019-03-04</time>
             
 
+            
+              
+
+              
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/大数据/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -435,7 +458,48 @@
       
 
       
-        
+        <h4 id="HDFS的体系结构"><a href="#HDFS的体系结构" class="headerlink" title="HDFS的体系结构"></a>HDFS的体系结构</h4><ol>
+<li>NameNode: 名称节点</li>
+</ol>
+<ul>
+<li>职责<ul>
+<li>HDFS的主节点 管理员</li>
+<li>接收客户端(命令行和Java)的请求,穿件目录 上传数据 下载数据 删除数据</li>
+<li>管理和维护HDFS的日志和元信息<ul>
+<li>日志文件(edits文件): 记录的是客户端的所有操作 体现了HDFS最新的状态<br> 是一个二进制文件<br> 位置: tmp/dfs/name/current<br> edits_inprogress_0000000000000000118 正在操作的日志信息<br> HDFS提供了一个日志查看器(edits viewer)<br> hdfs oev -i edits_inprogress_0000000000000000118 -o ~/a.xml  (日志文件的转换)<ul>
+<li>元信息文件(fsimage文件): 记录的是数据块的位置信息. 数据块的冗余信息<br>是一个二进制文件<br>位置tmp/dfs/name/current<br>HDFS 提供了元信息查看器(image viewer) 把fsimage文件转换为xml文件<br>hdfs oiv -i fsimage_000000000000000</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li><p>DataNode: 数据节点</p>
+<ul>
+<li>按照数据块 保存数据库<pre><code>1.x:64M
+2.x:128M
+</code></pre></li>
+<li>数据块 表现形式:就是一个文件<br>/root/training/hadoop/tmp/dfs/data/current/BP-141479076-127.0.0.1-1551409103135/current/finalized</li>
+<li>设置数据块冗余度原则: 一般跟数据节点的个数一样 但是最大不要超过3</li>
+<li>Hadoop 3.x以前 会造成存储空间的极大浪费<br>Hadoop 3.x之后 HDFS 纠删码技术 大大的节约存储的空间(节约一半的存储空间)</li>
+</ul>
+</li>
+<li><p>SecondaryNameNode: 第二名称节点<br>职责 进行日志信息的合并</p>
+</li>
+</ol>
+<ul>
+<li>由于edits文件记录了最新的状态信息,并且随着操作越多 edits就越大</li>
+<li>把edits中的最新信息写到fsimage中 </li>
+<li>日志文件可以清空</li>
+</ul>
+<p>补充点知识: 检查点 checkpoint</p>
+<ul>
+<li>Spark中RDD的检查点: 容错机制</li>
+<li>Oracle中的检查点: 会以最高优先级唤醒数据库的写进程 将脏数据写入硬盘文件</li>
+</ul>
+
       
     </div>
 
@@ -448,6 +512,35 @@
       
          <div>
         
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2019/03/04/HDFS的体系结构/">HDFS的体系结构</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 employeeeee/zhou 的个人博客">employeeeee/zhou</a></p>
+  <p><span>发布时间:</span>2019年03月04日 - 08:03</p>
+  <p><span>最后更新:</span>2019年03月04日 - 11:03</p>
+  <p><span>原始链接:</span><a href="/2019/03/04/HDFS的体系结构/" title="HDFS的体系结构">http://yoursite.com/2019/03/04/HDFS的体系结构/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://yoursite.com/2019/03/04/HDFS的体系结构/" aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+      $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+        });
+    });  
+</script>
+
 
         </div>
       
@@ -459,6 +552,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/大数据/" rel="tag"><i class="fa fa-tag"></i> 大数据</a>
+          
+        </div>
       
 
       
@@ -478,6 +577,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/04/操作HDFS/" rel="prev" title="操作HDFS">
+                操作HDFS <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -523,8 +626,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -541,7 +653,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -572,7 +684,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">9</span>
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">分类</span>
                   
                 </div>
@@ -615,7 +729,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">15</span>
+                      
+                    
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">标签</span>
                   
                 </div>
@@ -665,6 +781,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#HDFS的体系结构"><span class="nav-number">1.</span> <span class="nav-text">HDFS的体系结构</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

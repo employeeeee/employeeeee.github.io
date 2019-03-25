@@ -359,6 +359,906 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/25/Tomcat路径访问去掉项目名称/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="employeeeee/zhou">
+      <meta itemprop="description" content="Dont you want some of that">
+      <meta itemprop="image" content="/images/timg.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I got the most Time in the world">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/25/Tomcat路径访问去掉项目名称/" itemprop="url">
+                  Tomcat路径访问去掉项目名称
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-25 09:59:13 / 修改时间：10:08:31" itemprop="dateCreated datePublished" datetime="2019-03-25T09:59:13+08:00">2019-03-25</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/tomcat/" itemprop="url" rel="index"><span itemprop="name">tomcat</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>部署项目的时候 发现了一个问题 访问项目的时候 需要加上项目的名称才可以访问<br>这样就很不符合项目上线的实际应用场景.<br>于是查了相关资料 解决了一下url访问去掉项目名的问题<br>做一个记录</p>
+<ul>
+<li>需要在<code>server.xml</code>配置文件中的<code>&lt;Host&gt;</code>标签中 添加<code>&lt;context&gt;</code>标签<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Context docBase=&quot;项目的绝对路径&quot; path=&quot;&quot; reloadable=&quot;true&quot;&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>然后重启tomcat 查看日志 发现项目启动了两次 并且内存溢出 考虑解决办法</p>
+<ol>
+<li>增大tomcat的运行内存</li>
+<li>解决项目启动两次的问题 让项目只启动一次</li>
+</ol>
+<blockquote>
+<p>第一种方法 在<code>catalina.sh</code>的配置文件中 添加</p>
+<pre><code>JAVA_OPTS=&quot;-Xms 1024m -Xmx2048m=XX:PermSize=256m -XX:MaxPermSize&quot;
+</code></pre><p>但是并没有好用 我们的这个项目中很多没有用的jar包和代码都没有进行整理和优化 正常启动就需要几分钟 所以最后选择放弃这种办法<br>让项目只启动一次</p>
+</blockquote>
+<blockquote>
+<p>第二种解决办法 就是修改<code>server.xml</code>中的<code>&lt;Host&gt;</code>标签<br>将<code>appBase</code>的内容改为<code>appBase=&#39;&#39;</code></p>
+</blockquote>
+<p>重启tomcat 问题解决</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+      
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/12/HBase相关/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="employeeeee/zhou">
+      <meta itemprop="description" content="Dont you want some of that">
+      <meta itemprop="image" content="/images/timg.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I got the most Time in the world">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/12/HBase相关/" itemprop="url">
+                  HBase相关
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-12 17:44:47" itemprop="dateCreated datePublished" datetime="2019-03-12T17:44:47+08:00">2019-03-12</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+      
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/06/MapReduce的实际操作/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="employeeeee/zhou">
+      <meta itemprop="description" content="Dont you want some of that">
+      <meta itemprop="image" content="/images/timg.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I got the most Time in the world">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/06/MapReduce的实际操作/" itemprop="url">
+                  MapReduce的实际操作
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-06 11:39:19" itemprop="dateCreated datePublished" datetime="2019-03-06T11:39:19+08:00">2019-03-06</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-08 18:04:40" itemprop="dateModified" datetime="2019-03-08T18:04:40+08:00">2019-03-08</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/大数据/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="MapReduce-求部门的工资总额"><a href="#MapReduce-求部门的工资总额" class="headerlink" title="MapReduce 求部门的工资总额"></a>MapReduce 求部门的工资总额</h4><ol>
+<li><p>员工表<br>SQL: select t.department,sum(wage) from emp_tables t group by t.department</p>
+<ol start="2">
+<li>分析数据处理的过程</li>
+</ol>
+</li>
+</ol>
+<h4 id="MapReduce的高级特性"><a href="#MapReduce的高级特性" class="headerlink" title="MapReduce的高级特性"></a>MapReduce的高级特性</h4><ol>
+<li><p>序列化</p>
+<ul>
+<li>Java的序列化<br>serializable 接口</li>
+<li><p>MapReduce 的序列化: 核心接口 : Writeble</p>
+<pre><code>如果一个类实现了Writable的接口 该类的对象可以作为key和value
+
+读取员工的数据 生成员工对象 直接输出到HDFS
+使用MapReduce序列化 重写求部门工资总额的例子
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br></pre></td><td class="code"><pre><span class="line">                                     <span class="keyword">package</span> com.example.mapreducedemo.serializable;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.io.Writable;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.DataInput;</span><br><span class="line"><span class="keyword">import</span> java.io.DataOutput;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> employeeeee</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Descriotion</span>:</span></span><br><span class="line"><span class="comment"> * 员工号 名字 职位 领导 入职日期 工资 奖金 部门号</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2019/3/7 9:28</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Emp</span> <span class="keyword">implements</span> <span class="title">Writable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> empno;</span><br><span class="line">    <span class="keyword">private</span> String ename;</span><br><span class="line">    <span class="keyword">private</span> String job;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> mgr;</span><br><span class="line">    <span class="keyword">private</span> String hiredate;</span><br><span class="line">    <span class="keyword">private</span>  <span class="keyword">int</span> sal;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> comm;</span><br><span class="line">    <span class="keyword">private</span>  <span class="keyword">int</span> deptno;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(DataOutput dataOutput)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="comment">//序列化 向输出流写对象</span></span><br><span class="line">        dataOutput.writeInt(<span class="keyword">this</span>.empno);</span><br><span class="line">        dataOutput.writeUTF(<span class="keyword">this</span>.ename);</span><br><span class="line">        dataOutput.writeUTF(<span class="keyword">this</span>.job);</span><br><span class="line">        dataOutput.writeInt(<span class="keyword">this</span>.mgr);</span><br><span class="line">        dataOutput.writeUTF(<span class="keyword">this</span>.hiredate);</span><br><span class="line">        dataOutput.writeInt(<span class="keyword">this</span>.sal);</span><br><span class="line">        dataOutput.writeInt(<span class="keyword">this</span>.comm);</span><br><span class="line">        dataOutput.writeInt(<span class="keyword">this</span>.deptno);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">readFields</span><span class="params">(DataInput dataInput)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="comment">//反序列化 从输入流读对象</span></span><br><span class="line">        <span class="keyword">this</span>.empno = dataInput.readInt();</span><br><span class="line">        <span class="keyword">this</span>.ename = dataInput.readUTF();</span><br><span class="line">        <span class="keyword">this</span>.job = dataInput.readUTF();</span><br><span class="line">        <span class="keyword">this</span>.mgr = dataInput.readInt();</span><br><span class="line">        <span class="keyword">this</span>.hiredate = dataInput.readUTF();</span><br><span class="line">        <span class="keyword">this</span>.sal = dataInput.readInt();</span><br><span class="line">        <span class="keyword">this</span>.comm = dataInput.readInt();</span><br><span class="line">        <span class="keyword">this</span>.deptno = dataInput.readInt();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"员工信息&#123;"</span> +</span><br><span class="line">                <span class="string">"empno="</span> + empno +</span><br><span class="line">                <span class="string">", ename='"</span> + ename + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", job='"</span> + job + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", sal="</span> + sal +</span><br><span class="line">                <span class="string">", deptno="</span> + deptno +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getEmpno</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> empno;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setEmpno</span><span class="params">(<span class="keyword">int</span> empno)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.empno = empno;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getEname</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ename;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setEname</span><span class="params">(String ename)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.ename = ename;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getJob</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> job;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setJob</span><span class="params">(String job)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.job = job;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMgr</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> mgr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMgr</span><span class="params">(<span class="keyword">int</span> mgr)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.mgr = mgr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getHiredate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> hiredate;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setHiredate</span><span class="params">(String hiredate)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.hiredate = hiredate;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getSal</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> sal;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setSal</span><span class="params">(<span class="keyword">int</span> sal)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.sal = sal;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getComm</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> comm;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setComm</span><span class="params">(<span class="keyword">int</span> comm)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.comm = comm;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getDeptno</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> deptno;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDeptno</span><span class="params">(<span class="keyword">int</span> deptno)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.deptno = deptno;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">                                     <span class="keyword">package</span> com.example.mapreducedemo.serializable;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.io.IntWritable;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.io.LongWritable;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.io.Text;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.mapreduce.Mapper;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> employeeeee</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Descriotion</span>:</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2019/3/7 9:56</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EmpInfoMapper</span> <span class="keyword">extends</span> <span class="title">Mapper</span>&lt;<span class="title">LongWritable</span>,<span class="title">Text</span>, <span class="title">IntWritable</span>,<span class="title">Emp</span>&gt; </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">map</span><span class="params">(LongWritable key1, Text value1, Context context)</span> <span class="keyword">throws</span> IOException, InterruptedException </span>&#123;</span><br><span class="line"></span><br><span class="line">        String a = value1.toString();</span><br><span class="line"></span><br><span class="line">        String[] words = a.split(<span class="string">","</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//定义一个新的emp对象 并赋值</span></span><br><span class="line">        Emp emp = <span class="keyword">new</span> Emp();</span><br><span class="line">        emp.setEmpno(Integer.parseInt(words[<span class="number">0</span>]));</span><br><span class="line">        emp.setEname(words[<span class="number">1</span>]);</span><br><span class="line">        emp.setJob(words[<span class="number">2</span>]);</span><br><span class="line">        emp.setMgr(Integer.parseInt(words[<span class="number">3</span>]));</span><br><span class="line">        emp.setHiredate(words[<span class="number">4</span>]);</span><br><span class="line">        emp.setSal(Integer.parseInt(words[<span class="number">5</span>]));</span><br><span class="line">        emp.setComm(Integer.parseInt(words[<span class="number">6</span>]));</span><br><span class="line">        emp.setDeptno(Integer.parseInt(words[<span class="number">7</span>]));</span><br><span class="line"></span><br><span class="line">        <span class="comment">//输出</span></span><br><span class="line">        context.write(<span class="keyword">new</span> IntWritable(emp.getEmpno()),emp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre></li>
+</ul>
+</li>
+<li><p>排序</p>
+<ul>
+<li>规则: 按照key2排序</li>
+<li><p>基本数据类型</p>
+<ul>
+<li><p>数字 默认:升序</p>
+<pre><code>可以改变默认的排序规则(创建自己的比较器)
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">                <span class="keyword">package</span> com.example.mapreducedemo.serializetotal;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.io.IntWritable;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> employeeeee</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Descriotion</span>:</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2019/3/7 14:02</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyComparator</span> <span class="keyword">extends</span> <span class="title">IntWritable</span>.<span class="title">Comparator</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(<span class="keyword">byte</span>[] b1, <span class="keyword">int</span> s1, <span class="keyword">int</span> l1, <span class="keyword">byte</span>[] b2, <span class="keyword">int</span> s2, <span class="keyword">int</span> l2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> -<span class="keyword">super</span>.compare(b1, s1, l1, b2, s2, l2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">                <span class="keyword">package</span> com.example.mapreducedemo.comparable.sort;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.conf.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.fs.Path;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.io.NullWritable;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.mapreduce.Job;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.mapreduce.lib.input.FileInputFormat;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> employeeeee</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Descriotion</span>:</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2019/3/7 15:45</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EmpSortMain</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        Job job = Job.getInstance(<span class="keyword">new</span> Configuration());</span><br><span class="line">        job.setJarByClass(EmpSortMain.class);</span><br><span class="line"></span><br><span class="line">        job.setMapperClass(EmpSortMapper.class);</span><br><span class="line">        job.setOutputKeyClass(EmpSort.class);</span><br><span class="line">        job.setOutputValueClass(NullWritable.class);</span><br><span class="line"></span><br><span class="line">        FileInputFormat.setInputPaths(job,<span class="keyword">new</span> Path(args[<span class="number">0</span>]));</span><br><span class="line">        FileOutputFormat.setOutputPath(job,<span class="keyword">new</span> Path(args[<span class="number">1</span>]));</span><br><span class="line"></span><br><span class="line">        job.waitForCompletion(<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre></li>
+<li><p>字符串 默认:字典顺序</p>
+</li>
+</ul>
+</li>
+<li><p>对象</p>
+<ul>
+<li>sql 的排序<br>order by后面 + 列名 表达式 别名 序号<br>oracle 排序的结果 是临时表的数据  不是原来的表</li>
+<li>员工对象的排序 接口WritableComparable<ul>
+<li>一个列排序</li>
+<li>多个列排序 有几个条件就写几个条件 把等号写到最后一个条件上.<br>(前提) 该对象必须是Key2<pre><code>实现了hadoop序列化接口
+对象是可排序的 类似 Java的对象排序 comparable
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br></pre></td><td class="code"><pre><span class="line">                     <span class="keyword">package</span> com.example.mapreducedemo.comparable.sort;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.io.Writable;</span><br><span class="line"><span class="keyword">import</span> org.apache.hadoop.io.WritableComparable;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.DataInput;</span><br><span class="line"><span class="keyword">import</span> java.io.DataOutput;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> employeeeee</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Descriotion</span>:</span></span><br><span class="line"><span class="comment"> * 员工号 名字 职位 领导 入职日期 工资 奖金 部门号</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@date</span> 2019/3/7 9:28</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">EmpSort</span> <span class="keyword">implements</span> <span class="title">WritableComparable</span>&lt;<span class="title">EmpSort</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> empno;</span><br><span class="line">    <span class="keyword">private</span> String ename;</span><br><span class="line">    <span class="keyword">private</span> String job;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> mgr;</span><br><span class="line">    <span class="keyword">private</span> String hiredate;</span><br><span class="line">    <span class="keyword">private</span>  <span class="keyword">int</span> sal;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> comm;</span><br><span class="line">    <span class="keyword">private</span>  <span class="keyword">int</span> deptno;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(EmpSort o)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//定义自己的比较规则</span></span><br><span class="line">        <span class="comment">//如果是多个列 那么有几个条件写几个条件,最后一个列加等号</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.deptno&gt;o.deptno)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>  <span class="keyword">if</span> (<span class="keyword">this</span>.deptno&lt;o.deptno)&#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>.sal&gt;=o.sal)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(DataOutput dataOutput)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="comment">//序列化 向输出流写对象</span></span><br><span class="line">        dataOutput.writeInt(<span class="keyword">this</span>.empno);</span><br><span class="line">        dataOutput.writeUTF(<span class="keyword">this</span>.ename);</span><br><span class="line">        dataOutput.writeUTF(<span class="keyword">this</span>.job);</span><br><span class="line">        dataOutput.writeInt(<span class="keyword">this</span>.mgr);</span><br><span class="line">        dataOutput.writeUTF(<span class="keyword">this</span>.hiredate);</span><br><span class="line">        dataOutput.writeInt(<span class="keyword">this</span>.sal);</span><br><span class="line">        dataOutput.writeInt(<span class="keyword">this</span>.comm);</span><br><span class="line">        dataOutput.writeInt(<span class="keyword">this</span>.deptno);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">readFields</span><span class="params">(DataInput dataInput)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        <span class="comment">//反序列化 从输入流读对象</span></span><br><span class="line">        <span class="keyword">this</span>.empno = dataInput.readInt();</span><br><span class="line">        <span class="keyword">this</span>.ename = dataInput.readUTF();</span><br><span class="line">        <span class="keyword">this</span>.job = dataInput.readUTF();</span><br><span class="line">        <span class="keyword">this</span>.mgr = dataInput.readInt();</span><br><span class="line">        <span class="keyword">this</span>.hiredate = dataInput.readUTF();</span><br><span class="line">        <span class="keyword">this</span>.sal = dataInput.readInt();</span><br><span class="line">        <span class="keyword">this</span>.comm = dataInput.readInt();</span><br><span class="line">        <span class="keyword">this</span>.deptno = dataInput.readInt();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"员工信息&#123;"</span> +</span><br><span class="line">                <span class="string">"empno="</span> + empno +</span><br><span class="line">                <span class="string">", ename='"</span> + ename + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", job='"</span> + job + <span class="string">'\''</span> +</span><br><span class="line">                <span class="string">", sal="</span> + sal +</span><br><span class="line">                <span class="string">", deptno="</span> + deptno +</span><br><span class="line">                <span class="string">'&#125;'</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getEmpno</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> empno;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setEmpno</span><span class="params">(<span class="keyword">int</span> empno)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.empno = empno;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getEname</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ename;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setEname</span><span class="params">(String ename)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.ename = ename;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getJob</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> job;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setJob</span><span class="params">(String job)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.job = job;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMgr</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> mgr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMgr</span><span class="params">(<span class="keyword">int</span> mgr)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.mgr = mgr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getHiredate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> hiredate;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setHiredate</span><span class="params">(String hiredate)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.hiredate = hiredate;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getSal</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> sal;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setSal</span><span class="params">(<span class="keyword">int</span> sal)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.sal = sal;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getComm</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> comm;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setComm</span><span class="params">(<span class="keyword">int</span> comm)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.comm = comm;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getDeptno</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> deptno;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setDeptno</span><span class="params">(<span class="keyword">int</span> deptno)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.deptno = deptno;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>分区</p>
+<ul>
+<li>什么是分区? partition<br>结合关系型数据库Oracle</li>
+<li>MR的分区: 根据Map的输出&lt;key2,value2&gt;进行分区</li>
+<li>默认的情况下 MR只有一个分区 (一个分区就是一个文件)</li>
+<li>自定义分区 : 按照员工的部门号进行分区</li>
+</ul>
+</li>
+<li><p>合并 Combiner</p>
+<ul>
+<li>是一种特殊的Reducer </li>
+<li>合并实在Map端执行一次合并 用于减少Mapper输出到Redeucer的数据量 可以提高效率</li>
+</ul>
+</li>
+</ol>
+<h4 id="MapReduce核心-shuffle-洗牌"><a href="#MapReduce核心-shuffle-洗牌" class="headerlink" title="MapReduce核心: shuffle(洗牌)"></a>MapReduce核心: shuffle(洗牌)</h4><ol>
+<li>Hadoop 3.x 以前:  会有数据落地(产生I/O操作) </li>
+</ol>
+<h4 id="实际案例"><a href="#实际案例" class="headerlink" title="实际案例"></a>实际案例</h4><p>1 数据去重</p>
+<ul>
+<li>复习SQL:  distinct实现去重  作用于后面所有的列</li>
+</ul>
+<p>一个列 select job from emp<br>           select distinct job form emp<br>多个列<br>           select distinct deptno,job from emp </p>
+<ul>
+<li>使用MapReduce实现去重           </li>
+</ul>
+<p>关系型数据库中的多表查询(子查询: 在Oracle中 绝大部分的子查询 都是转换成多表查询的)<br>(1) 笛卡尔积: 列数相加 行数相乘<br>(2) 根据链接条件的不同</p>
+<ul>
+<li>等值连接</li>
+<li>不等值链接</li>
+<li>外链接</li>
+<li>内连接</li>
+</ul>
+<ol start="2">
+<li>多表查询 等值连接</li>
+</ol>
+<p>3.多表查询 自连接<br>在Oracle 中 当查询的数据满足一棵树的时候 可以使用层次查询来取代自连接</p>
+<ol start="4">
+<li><p>倒排索引</p>
+</li>
+<li><p>框架MRunit: 单元测试 MapReduce </p>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+      
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/04/操作HDFS/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="employeeeee/zhou">
+      <meta itemprop="description" content="Dont you want some of that">
+      <meta itemprop="image" content="/images/timg.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="I got the most Time in the world">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/03/04/操作HDFS/" itemprop="url">
+                  操作HDFS
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-04 11:15:44" itemprop="dateCreated datePublished" datetime="2019-03-04T11:15:44+08:00">2019-03-04</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-06 11:38:37" itemprop="dateModified" datetime="2019-03-06T11:38:37+08:00">2019-03-06</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/大数据/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="操作HDFS"><a href="#操作HDFS" class="headerlink" title="操作HDFS"></a>操作HDFS</h4><ul>
+<li><p>Web Console : 端口50070</p>
+</li>
+<li><p>命令行: 类似Linux</p>
+<ul>
+<li><p>普通的操作命令: hdfs dfs <strong><strong>(另一种写法 : hadoop fs </strong></strong>)</p>
+<pre><code>-mkdir
+
+ 查看目录
+ -ls
+ -ls -R 查看目录和子目录，另一种写法：-lsr
+
+ 上传数据
+ -put
+ -copyFromLocal
+ -moveFromLocal: 相当于ctrl+X（剪切）
+
+ 下载数据
+ -get
+ -copyToLocal
+
+ -rm：删除
+     参数： -rmr 表示删除目录和子目录
+     hdfs dfs -rmr /output
+     日志：Deleted /output
+     注意：如果启用回收站，观察日志
+
+ -getmerge：把某个HDFS的目录下的文件，先合并，再下载
+     举例：（students的数据，就是Hive的外部表用的数据）
+         [root@bigdata ~]# hdfs dfs -mkdir /students
+         [root@bigdata ~]# vi student01.txt
+         [root@bigdata ~]# vi student02.txt
+         [root@bigdata ~]# hdfs dfs -put student0*.txt /students
+         [root@bigdata ~]# hdfs dfs -ls /students
+         Found 2 items
+         -rw-r--r--   1 root supergroup         19 2018-09-04 04:46 /students/student01.txt
+         -rw-r--r--   1 root supergroup         10 2018-09-04 04:46 /students/student02.txt
+         [root@bigdata ~]# hdfs dfs -getmerge /students /root/a.txt
+         [root@bigdata ~]# more a.txt 
+         1,Tom,23
+         2,Mary,26
+         3,Mike,24
+
+ -cp
+ -mv
+
+ -count：统计HDFS目录下目录个数、文件个数、文件总的大小
+ [root@bigdata ~]# hdfs dfs -count /students
+            1            2                 29 /students
+
+ -du: hdfs dfs -du /students
+     19  /students/student01.txt
+     10  /students/student02.txt
+
+ -text、-cat: 查看文本的内容
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>HDFS的管理命令: hdfs dfsadmin <em>**</em></p>
+<p> [-report]<br> 打印报告</p>
+<p> [-safemode enter | leave | get | wait]<br> 安全模式<br> enter: 手动进入安全状态<br> leave: 手动离开安全模式<br> get: 获取安全模式状态<br> wait:</p>
+</li>
+</ul>
+<ul>
+<li><p>Java API<br>依赖的jar包：</p>
+<pre><code>$HADOOP_HOME/share/hadoop/common/*.jar
+$HADOOP_HOME/share/hadoop/common/lib/*.jar
+
+$HADOOP_HOME/share/hadoop/hdfs/*.jar
+$HADOOP_HOME/share/hadoop/hdfs/lib/*.jar
+</code></pre><ul>
+<li><p>创建目录</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">mkDir</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">    <span class="comment">//指定当前的Hadoop用户</span></span><br><span class="line">    System.setProperty(<span class="string">"HADOOP_USER_NAME"</span>,<span class="string">"root"</span>);</span><br><span class="line"></span><br><span class="line">    Configuration conf = <span class="keyword">new</span> Configuration();</span><br><span class="line">    conf.set(<span class="string">"fs.defaultFS"</span>,<span class="string">"hdfs://192.168.248.136:9000"</span>);</span><br><span class="line"></span><br><span class="line">    FileSystem client = FileSystem.get(conf);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    client.mkdirs(<span class="keyword">new</span> Path(<span class="string">"/filetest"</span>));</span><br><span class="line"></span><br><span class="line">    client.close();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>上传数据 下载数据</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">updateData</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    Configuration conf = <span class="keyword">new</span> Configuration();</span><br><span class="line">    conf.set(<span class="string">"fs.defaultFS"</span>,<span class="string">"hdfs://192.168.248.136:9000"</span>);</span><br><span class="line"></span><br><span class="line">    FileSystem client = FileSystem.get(conf);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//构造一个输入流 从本地读入数据</span></span><br><span class="line">    InputStream inputStream = <span class="keyword">new</span> FileInputStream(<span class="string">"d:\\1.txt"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//构造一个输出流 指向HDFS</span></span><br><span class="line">    OutputStream outputStream = client.create(<span class="keyword">new</span> Path(<span class="string">"/filetest/atest.txt"</span>));</span><br><span class="line"></span><br><span class="line"> <span class="comment">/*   //构造一个缓冲区</span></span><br><span class="line"><span class="comment">    byte[] buffer = new byte[1024];</span></span><br><span class="line"><span class="comment">    //长度</span></span><br><span class="line"><span class="comment">    int len = 0 ;</span></span><br><span class="line"><span class="comment">    while ((len = inputStream.read(buffer))&gt;0)&#123;</span></span><br><span class="line"><span class="comment">        //写入到输出流</span></span><br><span class="line"><span class="comment">        outputStream.write(buffer,0,len);</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">    //刷新</span></span><br><span class="line"><span class="comment">    outputStream.flush();</span></span><br><span class="line"><span class="comment">    //关闭流</span></span><br><span class="line"><span class="comment">    inputStream.close();</span></span><br><span class="line"><span class="comment">    outputStream.close();*/</span></span><br><span class="line"></span><br><span class="line">    IOUtils.copyBytes(inputStream,outputStream,<span class="number">1024</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看文件的信息</p>
+</li>
+<li>数据节点信息</li>
+</ul>
+</li>
+</ul>
+<h4 id="HDFS的原理分析"><a href="#HDFS的原理分析" class="headerlink" title="HDFS的原理分析"></a>HDFS的原理分析</h4><ul>
+<li>建立RPC通信<br>remote proceduer call 远程过程调用(协议)</li>
+</ul>
+<h4 id="HDFS的高级特性"><a href="#HDFS的高级特性" class="headerlink" title="HDFS的高级特性"></a>HDFS的高级特性</h4><ul>
+<li><p>安全模式 safe mode<br> 注意: HDFS正常运行的时候 安全模式是off关闭的状态 是HDFS的一种自我保护 检查数据块的副本率<br> 如果HDFS处于安全模式 是只读的状态</p>
+<blockquote>
+<p>集群启动的时候 会进入到安全模式 当系统处于安全模式时 会检查数据块的完整性 加入在dfs.replication中定义的是5 那么在一个datanode上 就应该有五个副本存在 假设只有三个副本那么比例就是3/5=0.6,在配置文件<code>hdfs-default</code>中定义了一个最小的副本率为0.99,因为0.6小雨0.99,系统会自动的复制副本到其他的dataNode.</p>
+</blockquote>
+</li>
+<li><p>快照: 是一种备份</p>
+<pre><code>[-allowSnapshot &lt;snapshotDir&gt;]
+[-disallowSnapshot &lt;snapshotDir&gt;] 
+
+    操作命令
+    -createSnapshot 目录 快照名称
+
+    快照的本质: 就是复制文件到一个隐藏目录
+</code></pre><p>(1) 启用目录的快照功能<br>eg. hdfs dfsadmin -allowSnapshot /input</p>
+<p>   hdfs dfs -createSnapshot /input backup_input_201803_05</p>
+</li>
+<li><p>配额 Quota</p>
+<ul>
+<li><p>名称配额: 限定HDFS目录下 存放文件的个数</p>
+<pre><code>[-setQuota &lt;quota&gt; &lt;dirname&gt;...&lt;dirname&gt;]
+[-clrQuota &lt;dirname&gt;...&lt;dirname&gt;]
+</code></pre><p>eg. hdfs dfs -mkdir /myquta<br>规定最多可以存放三个文件(实际存放n-1)<br> hdfs dfsadmin -setQuota 3 /myquota</p>
+</li>
+<li><p>空间配额 限定HDFS目录下 文件的大小</p>
+<pre><code>[-setSpaceQuota &lt;quota&gt; &lt;dirname&gt;...&lt;dirname&gt;]
+[-clrSpaceQuota &lt;dirname&gt;...&lt;dirname&gt;]
+</code></pre><p>  不管文件有多大 hadoop都是按照128M来存储的  所以设置的值<br>  是不可以小于数据块大小的<br>   hdfs dfsadmin -setSpaceQuota 300M /myquota</p>
+</li>
+</ul>
+</li>
+<li><p>回收站: 默认是禁用的</p>
+<ul>
+<li><p>回收站默认是关闭的 可以通过在<code>core-site.xml</code>中添加fs.trash.interval来打开配置时间</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt;</span><br><span class="line">&lt;name&gt;fs.trash.interval&lt;/name&gt;</span><br><span class="line">&lt;value&gt;1440&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除文件时 其实是放入回收站 /trash<br> 回收站的本质就是把一个目录 移动到了隐藏目录下</p>
+</li>
+<li><p>回收站里的文件可以快速恢复</p>
+</li>
+<li><p>Oracle数据库也有回收站  </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flashback table (表名) to before <span class="keyword">drop</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安全性 Kerberos</p>
+<h4 id="HDFS的底层原理"><a href="#HDFS的底层原理" class="headerlink" title="HDFS的底层原理"></a>HDFS的底层原理</h4></li>
+<li>HDFS的底层通信原理采用的是: RPC和动态代理对象Proxy<br>1 RPC: remote proceduer call 远程调用<br>2 Java的动态代理对象<ul>
+<li>如果一个类的名字前有$ 表示是一个代理对象</li>
+<li>是一种包装设计模式</li>
+<li>可以增强类的功能</li>
+<li>数据库连接池</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+      
+    
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/04/HDFS的体系结构/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -405,12 +1305,34 @@
                 
               
 
-              <time title="创建时间：2019-03-04 08:47:30" itemprop="dateCreated datePublished" datetime="2019-03-04T08:47:30+08:00">2019-03-04</time>
+              <time title="创建时间：2019-03-04 08:47:30 / 修改时间：11:17:25" itemprop="dateCreated datePublished" datetime="2019-03-04T08:47:30+08:00">2019-03-04</time>
             
 
+            
+              
+
+              
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/大数据/" itemprop="url" rel="index"><span itemprop="name">大数据</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -441,7 +1363,48 @@
       
         
           
-            
+            <h4 id="HDFS的体系结构"><a href="#HDFS的体系结构" class="headerlink" title="HDFS的体系结构"></a>HDFS的体系结构</h4><ol>
+<li>NameNode: 名称节点</li>
+</ol>
+<ul>
+<li>职责<ul>
+<li>HDFS的主节点 管理员</li>
+<li>接收客户端(命令行和Java)的请求,穿件目录 上传数据 下载数据 删除数据</li>
+<li>管理和维护HDFS的日志和元信息<ul>
+<li>日志文件(edits文件): 记录的是客户端的所有操作 体现了HDFS最新的状态<br> 是一个二进制文件<br> 位置: tmp/dfs/name/current<br> edits_inprogress_0000000000000000118 正在操作的日志信息<br> HDFS提供了一个日志查看器(edits viewer)<br> hdfs oev -i edits_inprogress_0000000000000000118 -o ~/a.xml  (日志文件的转换)<ul>
+<li>元信息文件(fsimage文件): 记录的是数据块的位置信息. 数据块的冗余信息<br>是一个二进制文件<br>位置tmp/dfs/name/current<br>HDFS 提供了元信息查看器(image viewer) 把fsimage文件转换为xml文件<br>hdfs oiv -i fsimage_000000000000000</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li><p>DataNode: 数据节点</p>
+<ul>
+<li>按照数据块 保存数据库<pre><code>1.x:64M
+2.x:128M
+</code></pre></li>
+<li>数据块 表现形式:就是一个文件<br>/root/training/hadoop/tmp/dfs/data/current/BP-141479076-127.0.0.1-1551409103135/current/finalized</li>
+<li>设置数据块冗余度原则: 一般跟数据节点的个数一样 但是最大不要超过3</li>
+<li>Hadoop 3.x以前 会造成存储空间的极大浪费<br>Hadoop 3.x之后 HDFS 纠删码技术 大大的节约存储的空间(节约一半的存储空间)</li>
+</ul>
+</li>
+<li><p>SecondaryNameNode: 第二名称节点<br>职责 进行日志信息的合并</p>
+</li>
+</ol>
+<ul>
+<li>由于edits文件记录了最新的状态信息,并且随着操作越多 edits就越大</li>
+<li>把edits中的最新信息写到fsimage中 </li>
+<li>日志文件可以清空</li>
+</ul>
+<p>补充点知识: 检查点 checkpoint</p>
+<ul>
+<li>Spark中RDD的检查点: 容错机制</li>
+<li>Oracle中的检查点: 会以最高优先级唤醒数据库的写进程 将脏数据写入硬盘文件</li>
+</ul>
+
           
         
       
@@ -1395,679 +2358,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/23/关于a标签实效的一些原因和解决办法/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="employeeeee/zhou">
-      <meta itemprop="description" content="Dont you want some of that">
-      <meta itemprop="image" content="/images/timg.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I got the most Time in the world">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/23/关于a标签实效的一些原因和解决办法/" itemprop="url">
-                  关于a标签实效的一些原因和解决办法
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-23 09:19:55 / 修改时间：09:29:01" itemprop="dateCreated datePublished" datetime="2018-11-23T09:19:55+08:00">2018-11-23</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/web相关/" itemprop="url" rel="index"><span itemprop="name">web相关</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>在项目的过程中 web前台出现了一个状态 就是a标签没有效果,不能点击不能跳转.然后找了一下原因 并附上解决办法.</p>
-</blockquote>
-<p>导致<code>&lt;a&gt;</code>标签不能使用的原因是因为,在你放<code>&lt;a&gt;</code>标签的div的上层有其他的div遮挡住了.导致你不能点击到你的<code>&lt;a&gt;</code>标签,所以首先要让自己能<br>    点到<code>&lt;a&gt;</code>标签就可以.<br>    第一种方式 可以通过z-index的方式来解决,把你遮挡住标签的div放到下边,就是在你上层div中添加一条css属性<br>    <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">z-index</span><span class="selector-pseudo">:-1</span></span><br></pre></td></tr></table></figure></p>
-<pre><code>&lt;!--more--&gt;
-
-   但是`z-index`属性是必须在position为`absolute` `relative` `fixed`的情况下才可以使用.
-而且在我的项目中,我的上级div也是有`&lt;a&gt;`标签的.使用z-index属性之后,上级div中的&apos;&lt;a&gt;&apos;标签页不能使用了.
-所以需要修改上级div大小,并修改相应的padding和margin属性.
-这个就需要根据实际情况调整.但是是可以保证每个div中的标签都可以使用的.
-</code></pre>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-      
-    
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/20/ssm数据库有值后台取值为空/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="employeeeee/zhou">
-      <meta itemprop="description" content="Dont you want some of that">
-      <meta itemprop="image" content="/images/timg.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I got the most Time in the world">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/20/ssm数据库有值后台取值为空/" itemprop="url">
-                  ssm数据库列名有下划线导致查询名称为空
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-20 14:49:43" itemprop="dateCreated datePublished" datetime="2018-11-20T14:49:43+08:00">2018-11-20</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-11-21 17:42:31" itemprop="dateModified" datetime="2018-11-21T17:42:31+08:00">2018-11-21</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/ssm相关/" itemprop="url" rel="index"><span itemprop="name">ssm相关</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>今天在做项目是时候发现了一个问题<br>数据库可以查询到数据 但是在后台获取的是null<br>上网查了一下原因 最后发现是因为mybatis.xml配置的问题<br>可以自己新建一个xml文件 加入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE configuration PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;</span><br><span class="line">&quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;</span><br><span class="line">&lt;configuration&gt;</span><br><span class="line"> </span><br><span class="line">&lt;/configuration</span><br></pre></td></tr></table></figure></p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/11/20/ssm数据库有值后台取值为空/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-         
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-      
-    
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/13/ajax和mybatis多表查询的配合使用/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="employeeeee/zhou">
-      <meta itemprop="description" content="Dont you want some of that">
-      <meta itemprop="image" content="/images/timg.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I got the most Time in the world">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/13/ajax和mybatis多表查询的配合使用/" itemprop="url">
-                  ajax和mybatis多表查询的配合使用
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-13 09:40:16 / 修改时间：10:38:25" itemprop="dateCreated datePublished" datetime="2018-11-13T09:40:16+08:00">2018-11-13</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/ssm相关/" itemprop="url" rel="index"><span itemprop="name">ssm相关</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>之前在测试了 一对一的方式后<br>又测试了一下一对多的方式,具体的关系为.一个班级有一个老师有很多学生.<br>在数据库中新建学生表 并存入数据.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> orm_student(</span><br><span class="line">s_id <span class="built_in">int</span> <span class="keyword">identity</span>(<span class="number">14301101</span>,<span class="number">1</span>) primary <span class="keyword">key</span> ,</span><br><span class="line">s_name <span class="built_in">varchar</span>(<span class="number">20</span>),</span><br><span class="line">class_id <span class="built_in">int</span></span><br><span class="line">) </span><br><span class="line"></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orm_student <span class="keyword">values</span>(<span class="string">'张三'</span>,<span class="number">1401</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orm_student <span class="keyword">values</span>(<span class="string">'李四'</span>,<span class="number">1401</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orm_student <span class="keyword">values</span>(<span class="string">'赵武'</span>,<span class="number">1401</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orm_student <span class="keyword">values</span>(<span class="string">'刘能'</span>,<span class="number">1401</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orm_student <span class="keyword">values</span>(<span class="string">'王大麻'</span>,<span class="number">1401</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> orm_student <span class="keyword">values</span>(<span class="string">'王心'</span>,<span class="number">1402</span>)</span><br></pre></td></tr></table></figure></p>
-<p>然后写好对应的实体类就行了,因为是查询class来搜索到所有学生的.<br>所以在测试时没有写学生相关的mapper文件等.并且要在class的实体类中,添加一条<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> List&lt;Student&gt; studentList;</span><br></pre></td></tr></table></figure></p>
-<p>用来查询学生的信息.<br></p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/11/13/ajax和mybatis多表查询的配合使用/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-         
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-      
-    
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/mybatis关联查询-1对1的查询/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="employeeeee/zhou">
-      <meta itemprop="description" content="Dont you want some of that">
-      <meta itemprop="image" content="/images/timg.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="I got the most Time in the world">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/11/mybatis关联查询-1对1的查询/" itemprop="url">
-                  mybatis关联查询-1对1的查询
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-11 10:46:06 / 修改时间：11:22:51" itemprop="dateCreated datePublished" datetime="2018-11-11T10:46:06+08:00">2018-11-11</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>因为项目要做地图关联的功能,其中会有关联查询,今天就在自己电脑上先做了一个测试 是学生 老师 班级这样的一个关联查询.<br>先写的是老师和班级的查询 在这里是一个老师对应一个班级 要通过班级的id把这个班级的名称和教师的名称显示出来.<br>在数据库中先建立教师表和班级表.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--关联查询测试  班级表</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> orm_class(</span><br><span class="line">c_id <span class="built_in">integer</span> primary <span class="keyword">key</span>,</span><br><span class="line">c_name <span class="keyword">NVARCHAR</span>(<span class="number">20</span>),</span><br><span class="line">t_id <span class="built_in">integer</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 关联查询测试 教师表</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> orm_teacher(</span><br><span class="line">t_id <span class="built_in">integer</span> primary <span class="keyword">key</span>,</span><br><span class="line">t_name <span class="keyword">NVARCHAR</span>(<span class="number">20</span>),</span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/11/11/mybatis关联查询-1对1的查询/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-         
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-      
-    
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2112,7 +2407,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">20</span>
+                    <span class="site-state-item-count">24</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2143,7 +2438,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">9</span>
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">分类</span>
                   
                 </div>
@@ -2186,7 +2483,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">15</span>
+                      
+                    
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">标签</span>
                   
                 </div>

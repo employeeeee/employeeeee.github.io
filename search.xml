@@ -14,7 +14,13 @@
   <entry>
     <title><![CDATA[HBase相关]]></title>
     <url>%2F2019%2F03%2F12%2FHBase%E7%9B%B8%E5%85%B3%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[NoSQL 数据库: HBaseNoSQL 数据库简介 not only sql2 常见的nosql数据库 HBase Redis: 基于内存的NoSQL数据库支持持久化: RDB AOF MongDB 基于文档型(BSON文档) 的NoSQL数据库 Cassandra: 跟HBase相似 HBase的体系架构(主从结构)和 表结构1 Hadoop的生态体系2 HBASE 基于HDFS智商的NoSQL数据库HBASE —-&gt; HDFS 表 目录 数据 文件默认大小 128M HBASE 的体系架构 搭建HBase的环境 解压hbase vi ~/.bash_profile HBASE_HOME= 路径 export HBASE_HOME PATH=$HBASE_HOME/bin:$PATH export PATH 2、伪分布模式：一个ZK、一个HMaster、一个RegionServer12345678910111213141516171819202122232425262728hbase-env.sh 129 export HBASE_MANAGES_ZK=true 使用HBase自带的ZooKeeperhbase-site.xml &lt;!--HBase对应的HDFS目录--&gt; &lt;property&gt; &lt;name&gt;hbase.rootdir&lt;/name&gt; &lt;value&gt;hdfs://192.168.157.111:9000/hbase&lt;/value&gt; &lt;/property&gt; &lt;!--是一个分布式环境--&gt; &lt;property&gt; &lt;name&gt;hbase.cluster.distributed&lt;/name&gt; &lt;value&gt;true&lt;/value&gt; &lt;/property&gt; &lt;!--指定ZK的地址--&gt; &lt;property&gt; &lt;name&gt;hbase.zookeeper.quorum&lt;/name&gt; &lt;value&gt;192.168.157.111&lt;/value&gt; &lt;/property&gt; &lt;property&gt; &lt;name&gt;dfs.replication&lt;/name&gt; &lt;value&gt;1&lt;/value&gt; &lt;/property&gt; regionservers 操作HBase Web console1601060010(旧版本) 创建表： create ‘student’,’info’,’grade’ 查看表: list MySQL: show tables; Oracle: select * from tab; 查看表结构：desc &apos;student&apos; describe &apos;student&apos; SQL中（Oracle）：desc和describe什么区别？ 都是看表结构 (*) desc 是SQL*PLUS语句，可以缩写 (*) describe是SQL语句，不能缩写 （*）插入数据：put put &apos;student&apos;,&apos;stu003&apos;,&apos;info:age&apos;,&apos;13&apos; （*）查询数据： scan 相当于 select * from student get 相当于 select * from student where rowkey=??? get &apos;student&apos;,&apos;stu001&apos; 为了加快查询的速度，可以建立HBase的二级索引 （*）清空表数据：truncate 日志： hbase(main):005:0&gt; truncate &apos;student&apos; Truncating &apos;student&apos; table (it may take a while): - Disabling table... - Truncating table... 0 row(s) in 3.9740 seconds 老版本的HBase使用truncate 日志： hbase(main):005:0&gt; truncate &apos;student&apos; Truncating &apos;student&apos; table (it may take a while): - Disabling table... - Dropping table... - Creating table 0 row(s) in 3.9740 seconds 补充一个知识：delete和truncate什么区别？（以Oracle为例） 1、delete是DML（Data Manipulation Language）语句，DML可以回滚 truncate是DDL（Data Definition Language）语句，DDL不可以回滚 2、delete会产生碎片、truncate不会 3、delete不会释放空间，truncate会 4、delete可以闪回(flashback)，truncate不可以 （*）删除表： drop hbase(main):007:0&gt; disable &apos;student&apos; 0 row(s) in 2.2980 seconds hbase(main):008:0&gt; drop &apos;student&apos; 0 row(s) in 1.3770 seconds C:\Windows\System32\drivers\etc\hosts 里写入ip映射 192.168.28.136 master 数据保存的过程(Region的分裂)HBase的过滤器(相当于where语句)HBase的MapReduce]]></content>
+      <categories>
+        <category>大数据</category>
+      </categories>
+      <tags>
+        <tag>大数据</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[MapReduce的实际操作]]></title>

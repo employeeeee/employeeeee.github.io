@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Mybatis批量生成新账号保存到oracle数据库]]></title>
+    <url>%2F2019%2F04%2F24%2FMybatis%E6%89%B9%E9%87%8F%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE%E5%88%B0oracle%E6%95%B0%E6%8D%AE%E5%BA%93%2F</url>
+    <content type="text"><![CDATA[最近公司项目 需要有一个用户选择对应的信息然后批量生成账号的功能用户可以选择的 信息 有账号所属系统 账号所属地区 账号角色信息 不同的角色信息 对应的所属地区是不同的. 每一个系统 地区 账号角色 都对应了自己的id 然后用户选择后 可以生成流水号进行拼接 生成用户的登录账号 大概的功能是这样的因为账号的角色 和 系统比较少 所以将对应的id写在了一个枚举类中.地区的信息是从数据库中 查询出来的.因为前台传到后台的是一个list 所有需要有一个for循环来对list中内容进行 遍历再将城市地区对应的id取出来但是这样写的话 就会出现一个问题 就是把连接数据库的操作 放到了for循环中去.这是会十分影响性能的.所以就想到了先通过一个查询 把所有城市信息查询出来 并转换成json类型再for循环中 通过遍历json来解决重复连接数据库的问题1234567891011121314151617181920212223242526272829//查询城市名称和id号的对应表 生成json对象 避免在for循环中进行数据库操作 List&lt;UserCity&gt; userCityList = userCityService.getAllCityList(); //定义一个stringbuffer 拼接一个json StringBuffer jsonStrAll = new StringBuffer("["); for (UserCity userCity:userCityList)&#123; jsonStrAll.append("&#123;"+"\""+"cityId"+"\""+":"+"\""+userCity.getCityId()+"\""+","+"\""+"cityName"+"\""+":"+"\""+userCity.getCityName()+"\""+"&#125;,"); &#125; String jsonstr = jsonStrAll.substring(0,jsonStrAll.length()-1); if (!"".equals(jsonstr))&#123; jsonstr=jsonstr+"]"; &#125; //生成json数组 JSONArray json =JSONArray.fromObject(jsonstr); String cityNum =""; List list = new LinkedList(); String[] strings = superior.split(","); if (json.size()&gt;0)&#123; for (int i=0;i&lt;json.size();i++)&#123; //遍历json数组 转化为json对象 JSONObject job = json.getJSONObject(i); for (int j=0;j&lt;strings.length;j++)&#123; if (job.get("cityName").equals(strings[j]))&#123; cityNum= (String) job.get("cityId"); //将城市的number添加到list中去 list.add(cityNum); &#125; &#125; &#125; &#125; 然后存储用户的时候 是通过报错userlist来保存的开始写的时候 是通过insert into 的方式来写的 发现一直提示sql语句有问题. 然后发现oracle的批量插入不是这样写的. 应该是使用insert all into的方式 123456INSERT ALL&lt;foreach colleciton=&quot;list&quot; item=&quot;sysUser&quot;&gt;INTO sys_uservalues ()&lt;/foreach&gt;SELECT 1 FROM dual 要注意的是into要写到 循环的里边 不需要加`separator=&apos;,&apos;` 因为orcale是不需要分割的 最后加上select 1 from dual 还有一种方法是通过 1insert into table(...) (select ... from dual) union all (select ... from dual) 的方式来进行批量查询 这个方法看起来不太讨喜 还是insert all 用的习惯一些]]></content>
+      <tags>
+        <tag>mybatis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[分布式事务解决方案]]></title>
+    <url>%2F2019%2F04%2F10%2F%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[springboot学习的汇总]]></title>
+    <url>%2F2019%2F04%2F04%2Fspringboot%E5%AD%A6%E4%B9%A0%E7%9A%84%E6%B1%87%E6%80%BB%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[Tomcat路径访问去掉项目名称]]></title>
     <url>%2F2019%2F03%2F25%2FTomcat%E8%B7%AF%E5%BE%84%E8%AE%BF%E9%97%AE%E5%8E%BB%E6%8E%89%E9%A1%B9%E7%9B%AE%E5%90%8D%E7%A7%B0%2F</url>
     <content type="text"><![CDATA[部署项目的时候 发现了一个问题 访问项目的时候 需要加上项目的名称才可以访问这样就很不符合项目上线的实际应用场景.于是查了相关资料 解决了一下url访问去掉项目名的问题做一个记录 需要在server.xml配置文件中的&lt;Host&gt;标签中 添加&lt;context&gt;标签1&lt;Context docBase=&quot;项目的绝对路径&quot; path=&quot;&quot; reloadable=&quot;true&quot;&gt; 然后重启tomcat 查看日志 发现项目启动了两次 并且内存溢出 考虑解决办法 增大tomcat的运行内存 解决项目启动两次的问题 让项目只启动一次 第一种方法 在catalina.sh的配置文件中 添加 JAVA_OPTS=&quot;-Xms 1024m -Xmx2048m=XX:PermSize=256m -XX:MaxPermSize&quot; 但是并没有好用 我们的这个项目中很多没有用的jar包和代码都没有进行整理和优化 正常启动就需要几分钟 所以最后选择放弃这种办法让项目只启动一次 第二种解决办法 就是修改server.xml中的&lt;Host&gt;标签将appBase的内容改为appBase=&#39;&#39; 重启tomcat 问题解决]]></content>
